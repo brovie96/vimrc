@@ -32,4 +32,4 @@ set whichwrap+=<,>,h,l,[,]
 set nowrap
 
 "map <leader>w to remove trailing whitespace
-nnoremap <silent> <leader>w :%s/\s\+$//e<cr>``
+nnoremap <silent> <leader>w myHmz:%s/\s\+$//e<cr>`zzt`y
