@@ -10,8 +10,12 @@ set softtabstop=4
 "(backspace over indents, eols, and insertion start point)
 set backspace=indent,eol,start
 
-"show trailing spaces as a row of • characters
-set list listchars=trail:•
+"highlight trailing whitespace
+highlight link TrailingWhitespace Error
+match TrailingWhitespace /\s\+$/
+
+"set a buffer of five lines around the cursor
+set scrolloff=5
 
 "turn on syntax highlighting
 syntax on
