@@ -21,7 +21,7 @@ syntax on
 highlight link TrailingWhitespace Error
 match TrailingWhitespace /\s\+$/
 
-"set a buffer of five lines around the cursor
+"set a buffer of five lines around the cursor when scrolling
 set scrolloff=5
 
 "set left and right movement to move between end of
@@ -31,5 +31,16 @@ set whichwrap+=<,>,h,l,[,]
 "keep long lines from wrapping
 set nowrap
 
-"map <leader>w to remove trailing whitespace
-nnoremap <silent> <leader>w myHmz:%s/\s\+$//e<cr>`zzt`y
+"create function to remove trailing whitespace
+function! s:ClearWhitespace() abort
+    let startpos = getcurpos()
+    normal! H
+    let topline = line('.')
+    %s/\s\+$//e
+    execute 'normal! ' . topline . 'G'
+    normal! zt
+    call setpos('.', startpos)
+endfunction
+
+"map <leader>w to call function
+nnoremap <silent> <leader>w :call <SID>ClearWhitespace()<cr>
