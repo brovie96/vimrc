@@ -23,7 +23,7 @@ highlight link TrailingWhitespace Error
 "autocmd to enable highlighting on window enter
 augroup MatchTrailingWhitespace
     autocmd!
-    autocmd VimEnter,WinEnter * match TrailingWhitespace /\s\+$/
+    autocmd VimEnter,WinEnter * call matchadd('TrailingWhitespace', '\s\+$')
 augroup END
 
 "set a buffer of five lines around the cursor when scrolling
