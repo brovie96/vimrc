@@ -44,3 +44,7 @@ endfunction
 
 "map <leader>w to call function
 nnoremap <silent> <leader>w :call <SID>ClearWhitespace()<cr>
+
+"map <leader><Tab> and <leader><S-Tab> to switch tabs
+nnoremap <silent> <leader><Tab> :tabn<cr>
+nnoremap <silent> <leader><S-Tab> :tabp<cr>
