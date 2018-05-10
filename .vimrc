@@ -36,7 +36,7 @@ function! s:ClearWhitespace() abort
     let startpos = getcurpos()
     normal! H
     let topline = line('.')
-    %s/\s\+$//e
+    %substitute/\s\+$//e
     execute 'normal! ' . topline . 'G'
     normal! zt
     call setpos('.', startpos)
