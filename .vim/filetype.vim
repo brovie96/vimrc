@@ -8,5 +8,5 @@ augroup NginxSyntax
     "/etc/nginx/sites-available, and all
     "files in /etc/nginx/sites-enabled to
     "use nginx syntax
-    autocmd BufRead,BufNewFile /etc/nginx/nginx.conf,/etc/nginx/sites-available/*,/etc/nginx/sites-enabled/* if &ft == '' | setfiletype nginx | endif
+    autocmd BufRead,BufNewFile /etc/nginx/nginx.conf,/etc/nginx/sites-available/*,/etc/nginx/sites-enabled/* setfiletype nginx
 augroup END
