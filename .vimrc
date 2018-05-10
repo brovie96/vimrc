@@ -17,9 +17,14 @@ filetype plugin indent on
 "turn on syntax highlighting
 syntax on
 
-"highlight trailing whitespace
+"set trailing whitespace to highlight in the error color
 highlight link TrailingWhitespace Error
-match TrailingWhitespace /\s\+$/
+
+"autocmd to enable highlighting on window enter
+augroup MatchTrailingWhitespace
+    autocmd!
+    autocmd VimEnter,WinEnter * match TrailingWhitespace /\s\+$/
+augroup END
 
 "set a buffer of five lines around the cursor when scrolling
 set scrolloff=5
