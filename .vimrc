@@ -29,8 +29,7 @@ augroup END
 "set a buffer of five lines around the cursor when scrolling
 set scrolloff=5
 
-"set left and right movement to move between end of
-"upper line and beginning of lower line
+"set left and right movement to move across eols
 set whichwrap+=<,>,h,l,[,]
 
 "keep long lines from wrapping
