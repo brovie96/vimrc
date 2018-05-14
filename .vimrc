@@ -38,6 +38,9 @@ set whichwrap+=<,>,h,l,[,]
 "keep long lines from wrapping
 set nowrap
 
+"make sideways scrolling not jump so much
+set sidescroll=20
+
 "create function to remove trailing whitespace
 function! s:ClearWhitespace() abort
     let startpos = getcurpos()
