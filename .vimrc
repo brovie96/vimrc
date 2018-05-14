@@ -6,6 +6,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+"set confirm to make better dialog on :q and others
+set confirm
+
 "make backspace work more normally
 "(backspace over indents, eols, and insertion start point)
 set backspace=indent,eol,start
