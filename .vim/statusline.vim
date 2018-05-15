@@ -30,6 +30,7 @@ function! HumanSize(bytes) abort
         return printf('%.2f%s', l:bytes, l:sizes[l:i])
     else
         return printf('%.0f%s', l:bytes, l:sizes[l:i])
+    endif
 endfunction
 
 function! FileFormat() abort
