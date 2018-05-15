@@ -27,13 +27,7 @@ syntax on
 set number
 
 "change highlighting for line numbers
-highlight! link LineNr Identifier
-
-"make autocmd to recolor on colorscheme change
-augroup LineNumberHighlight
-    autocmd!
-    autocmd ColorScheme * highlight! link LineNr Identifier
-augroup END
+highlight LineNr term=bold cterm=bold ctermfg=darkcyan
 
 "set a buffer of five lines around the cursor when scrolling
 set scrolloff=5

@@ -1,12 +1,6 @@
 "set trailing whitespace to highlight in the error color
 highlight link TrailingWhitespace Error
 
-"make sure highlighting happens on color change
-augroup HighlightTrailingWhitespace
-    autocmd!
-    autocmd ColorScheme * highlight link TrailingWhitespace Error
-augroup END
-
 "autocmd to enable highlighting on window enter
 augroup MatchTrailingWhitespace
     autocmd!
