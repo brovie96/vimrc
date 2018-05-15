@@ -1,6 +1,3 @@
-"enable statusline
-set laststatus=2
-
 "statusline functions
 function! ReadOnlyAndModified() abort
     let ret=''
@@ -43,6 +40,10 @@ endfunction
 
 "function to build statusline
 function! statusline#buildstatusline() abort
+    "enable statusline
+    set laststatus=2
+
+    "build statusline
     let &statusline=''
     let &statusline.='%F'
     let &statusline.=' %y'
