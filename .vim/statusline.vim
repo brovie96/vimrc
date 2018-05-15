@@ -17,6 +17,10 @@ function! ReadOnlyAndModified() abort
 endfunction
 
 function! HumanSize(bytes) abort
+    if a:bytes < 0
+        return ''
+    endif
+
     let l:bytes = a:bytes
     let l:sizes = ['B', 'KiB', 'MiB', 'GiB']
     let l:i = 0
@@ -41,7 +45,7 @@ endfunction
 let &statusline=''
 let &statusline.='%F'
 let &statusline.=' %y'
-let &statusline.=' %{HumanSize(line2byte("$")+len(getline("$")))}'
+let &statusline.=' %{HumanSize(line2byte(line("$")+1)-1)}'
 let &statusline.=' %{ReadOnlyAndModified()}'
 let &statusline.='%='
 let &statusline.='(%l,%c%V)'
