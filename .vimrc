@@ -3,14 +3,11 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
-"source statusline and trailing whitespace stuff
-if has('unix')
-    source $HOME/.vim/statusline.vim
-    source $HOME/.vim/trailingwhitespace.vim
-elseif has('win32')
-    source $HOME\vimfiles\statusline.vim
-    source $HOME\vimfiles\trailingwhitespace.vim
-endif
+"draw statusline
+call statusline#buildstatusline()
+
+"load trailing whitespace stuff
+runtime trailingwhitespace.vim
 
 "set confirm to make better dialog on :q and others
 set confirm

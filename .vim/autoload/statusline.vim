@@ -41,13 +41,15 @@ function! FileFormat() abort
     return printf('%4s', &fileformat)
 endfunction
 
-"build statusline
-let &statusline=''
-let &statusline.='%F'
-let &statusline.=' %y'
-let &statusline.=' %{HumanSize(line2byte(line("$")+1)-1)}'
-let &statusline.=' %{ReadOnlyAndModified()}'
-let &statusline.='%='
-let &statusline.='(%l,%c%V)'
-let &statusline.='      %{FileFormat()}'
-let &statusline.='      %P'
+"function to build statusline
+function! statusline#buildstatusline() abort
+    let &statusline=''
+    let &statusline.='%F'
+    let &statusline.=' %y'
+    let &statusline.=' %{HumanSize(line2byte(line("$")+1)-1)}'
+    let &statusline.=' %{ReadOnlyAndModified()}'
+    let &statusline.='%='
+    let &statusline.='(%l,%c%V)'
+    let &statusline.='      %{FileFormat()}'
+    let &statusline.='      %P'
+endfunction
