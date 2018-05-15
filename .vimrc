@@ -4,7 +4,11 @@ set shiftwidth=4
 set softtabstop=4
 
 "source statusline stuff
-source $HOME/.vim/statusline.vim
+if has('unix')
+    source $HOME/.vim/statusline.vim
+elseif has('win32')
+    source $HOME\vimfiles\statusline.vim
+endif
 
 "set confirm to make better dialog on :q and others
 set confirm
