@@ -51,6 +51,6 @@ function! statusline#buildstatusline() abort
     let &statusline.=' %{ReadOnlyAndModified()}'
     let &statusline.='%='
     let &statusline.='(%l,%c%V)'
-    let &statusline.='      %{FileFormat()}'
-    let &statusline.='      %P'
+    let &statusline.='  %{FileFormat()}'
+    let &statusline.='  %P'
 endfunction
