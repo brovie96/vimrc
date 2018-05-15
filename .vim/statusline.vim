@@ -2,19 +2,25 @@
 set laststatus=2
 
 "statusline functions
-function! ReadOnly() abort
+function! ReadOnlyAndModified() abort
+    let ret=''
+
+    if &modified
+        let ret.=' [+]'
+    endif
+
     if &readonly || !&modifiable
-        return '[RO]'
-    else
-        return ''
+        let ret.=' [RO]'
+    endif
+
+    return ret
 endfunction
 
 "build statusline
 set statusline=
 set statusline+=%F
 set statusline+=\ %y
-set statusline+=\ %{ReadOnly()}
+set statusline+=%{ReadOnlyAndModified()}
 set statusline+=%=
-set statusline+=%{(&modified?'Modified':'')}
 set statusline+=\ \ \ \ (%l,%c%V)
 set statusline+=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ %P
