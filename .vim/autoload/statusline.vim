@@ -19,11 +19,11 @@ function! HumanSize(bytes) abort
     endif
 
     let l:bytes = a:bytes
-    let l:sizes = ['B', 'KiB', 'MiB', 'GiB']
+    let l:sizes = ['B', 'KB', 'MB', 'GB']
     let l:i = 0
 
-    while l:bytes >= 1024
-        let l:bytes = l:bytes / 1024.0
+    while l:bytes >= 1000
+        let l:bytes = l:bytes / 1000.0
         let l:i += 1
     endwhile
 
