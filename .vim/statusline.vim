@@ -32,6 +32,10 @@ function! HumanSize(bytes) abort
         return printf('%.0f%s', l:bytes, l:sizes[l:i])
 endfunction
 
+function! FileFormat() abort
+    return printf('%4s', &fileformat)
+endfunction
+
 "build statusline
 let &statusline=''
 let &statusline.='%F'
@@ -40,4 +44,5 @@ let &statusline.=' %{HumanSize(line2byte("$")+len(getline("$")))}'
 let &statusline.=' %{ReadOnlyAndModified()}'
 let &statusline.='%='
 let &statusline.='    (%l,%c%V)'
-let &statusline.='                %P'
+let &statusline.='      %{FileFormat()}'
+let &statusline.='      %P'
