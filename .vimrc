@@ -23,6 +23,18 @@ filetype plugin indent on
 "turn on syntax highlighting
 syntax on
 
+"turn on line numbers
+set number
+
+"change highlighting for line numbers
+highlight! link LineNr Identifier
+
+"make autocmd to recolor on colorscheme change
+augroup LineNumberHighlight
+    autocmd!
+    autocmd ColorScheme * highlight! link LineNr Identifier
+augroup END
+
 "set a buffer of five lines around the cursor when scrolling
 set scrolloff=5
 
