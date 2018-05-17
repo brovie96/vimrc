@@ -3,6 +3,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+"enable mouse
+set mouse=a
+
 "draw statusline
 call statusline#buildstatusline()
 
