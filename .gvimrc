@@ -1,2 +1,2 @@
 "set color scheme
-colorscheme industry
+colorscheme elflord
