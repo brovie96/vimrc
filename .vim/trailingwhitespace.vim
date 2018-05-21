@@ -13,7 +13,7 @@ function! s:ClearWhitespace() abort
     normal! H
     let topline = line('.')
     %substitute/\s\+$//e
-    execute 'normal! ' . topline . 'G'
+    execute topline
     normal! zt
     call setpos('.', startpos)
 endfunction
