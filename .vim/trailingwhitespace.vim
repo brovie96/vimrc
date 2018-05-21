@@ -11,9 +11,11 @@ augroup END
 function! s:ClearWhitespace() abort
     let startpos = getcurpos()
     let topline = line('w0')
+
     if topline > 1
         let topline += 5
     endif
+
     %substitute/\s\+$//e
     execute topline
     normal! zt
