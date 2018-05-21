@@ -13,7 +13,7 @@ function! s:ClearWhitespace() abort
     let topline = line('w0')
 
     if topline > 1
-        let topline += 5
+        let topline += &scrolloff
     endif
 
     %substitute/\s\+$//e
