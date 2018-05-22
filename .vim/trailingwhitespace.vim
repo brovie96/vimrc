@@ -9,16 +9,25 @@ augroup END
 
 "create function to remove trailing whitespace
 function! s:ClearWhitespace() abort
+    "hold on to cursor position (also gets preferred column, so nothing
+    "changes)
     let startpos = getcurpos()
+    "get the top line of the screen without using a jump
     let topline = line('w0')
 
+    "set the proper line to call zt from if scrolloff is greater than 0
     if topline > 1
         let topline += &scrolloff
     endif
 
+    "remove the trailing whitespace, silencing errors if none is found
     %substitute/\s\+$//e
+    "return cursor to topline
     execute topline
+    "move topline to the top of the screen (or as close as scrolloff will let
+    "it get)
     normal! zt
+    "return cursor to starting position
     call setpos('.', startpos)
 endfunction
 
