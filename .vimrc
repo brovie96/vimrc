@@ -12,7 +12,7 @@ call statusline#buildstatusline()
 "load trailing whitespace stuff
 runtime trailingwhitespace.vim
 
-"set confirm to add a confirmation dialog on :q and others
+"add a confirmation dialog on :q and others
 set confirm
 
 "make backspace work more normally (backspace over indents, eols, and
