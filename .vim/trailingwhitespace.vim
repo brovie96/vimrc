@@ -8,7 +8,7 @@ augroup MatchTrailingWhitespace
 augroup END
 
 "create function to remove trailing whitespace
-function! s:ClearWhitespace() abort
+function! s:ClearTrailingWhitespace() abort
     "hold on to cursor position (also gets preferred column, so nothing
     "changes)
     let startpos = getcurpos()
@@ -38,4 +38,4 @@ function! s:ClearWhitespace() abort
 endfunction
 
 "map <leader>w to call function
-nnoremap <silent> <leader>w :call <SID>ClearWhitespace()<cr>
+nnoremap <silent> <leader>w :call <SID>ClearTrailingWhitespace()<cr>
