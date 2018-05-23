@@ -19,7 +19,7 @@ function! s:ClearWhitespace() abort
     if topline > 1
         "make sure scrolloff being maxed out doesn't screw up anything (tests
         "are inconclusive, but just making sure)
-        if &scrolloff >= ceil(winheight(0))
+        if &scrolloff >= ceil(winheight(0) / 2.0)
             let topline = line('.')
         else
             let topline += &scrolloff
