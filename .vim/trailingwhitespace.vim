@@ -17,7 +17,13 @@ function! s:ClearWhitespace() abort
 
     "set the proper line to call zt from if scrolloff is greater than 0
     if topline > 1
-        let topline += &scrolloff
+        "make sure scrolloff being maxed out doesn't screw up anything (tests
+        "are inconclusive, but just making sure)
+        if &scrolloff >= ceil(winheight(0))
+            let topline = line('.')
+        else
+            let topline += &scrolloff
+        endif
     endif
 
     "remove the trailing whitespace, silencing errors if none is found
