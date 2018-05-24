@@ -41,9 +41,7 @@ function! statusline#buildstatusline() abort
     let g:airline_symbols.whitespace = 'Ξ'
 
     "change c section of airline
-    let g:airline_section_c = "%<%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
-    "change x section of airline
-    let g:airline_section_x = "%{airline#util#prepend(\"\",0)}%{airline#util#wrap(airline#parts#filetype(),0)} %{HumanSize(line2byte(line(\"$\")+1)-1)}"
+    let g:airline_section_c = "%<%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#%{HumanSize(line2byte(line(\"$\")+1)-1)}"
     "change z section of airline
     let g:airline_section_z = "%-4P% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3c%V"
 endfunction
