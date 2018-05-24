@@ -43,5 +43,5 @@ function! statusline#configurestatusline() abort
     "change c section of airline
     let g:airline_section_c = "%<%<%F%m %{HumanSize(line2byte(line(\"$\")+1)-1)} %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
     "change z section of airline
-    let g:airline_section_z = "%-4P% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3c%V"
+    let g:airline_section_z = "%-4P% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%7(%c%V%)"
 endfunction
