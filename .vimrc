@@ -5,7 +5,6 @@ set softtabstop=4
 
 "start up pathogen
 call pathogen#infect()
-call pathogen#helptags()
 
 "enable mouse
 set mouse=a
