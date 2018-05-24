@@ -1,21 +1,5 @@
 "statusline functions
 
-"adds a '[+]' to the statusline if the buffer is modified, and a '[RO]' if the
-"buffer is set to readonly or nonmodifiable
-function! ReadOnlyAndModified() abort
-    let ret=''
-
-    if &modified
-        let ret.='[+] '
-    endif
-
-    if &readonly || !&modifiable
-        let ret.='[RO]'
-    endif
-
-    return ret
-endfunction
-
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline
 "(updates with typing as well)
 function! HumanSize(bytes) abort
@@ -33,38 +17,18 @@ function! HumanSize(bytes) abort
     endwhile
 
     if l:i > 0
-        return printf('%.2f%s', l:bytes, l:sizes[l:i])
+        return printf('(%.2f %s)', l:bytes, l:sizes[l:i])
     else
-        return printf('%.0f%s', l:bytes, l:sizes[l:i])
+        return printf('(%.0f %s)', l:bytes, l:sizes[l:i])
     endif
-endfunction
-
-"adds the newline format (usually 'unix' or 'dos') to the statusline
-function! FileFormat() abort
-    return printf('%4s', &fileformat)
 endfunction
 
 "function to build statusline
 function! statusline#buildstatusline() abort
-    "enable statusline
-    set laststatus=2
-
-    "build statusline
-    let &statusline=''
-    "full path
-    let &statusline.='%F'
-    "filetype
-    let &statusline.=' %y'
-    "size in bytes, with applicable decimal prefix
-    let &statusline.=' %{HumanSize(line2byte(line("$")+1)-1)}'
-    "[+] and/or [RO], if modified and/or readonly/nonmodifiable respectively
-    let &statusline.=' %{ReadOnlyAndModified()}'
-    "switch to right side
-    let &statusline.='%='
-    "line number and real/virtual column number
-    let &statusline.='(%l,%c%V)'
-    "file format (usually 'unix' or 'dos')
-    let &statusline.='  %{FileFormat()}'
-    "percentage scrolled (as in ruler)
-    let &statusline.='  %P'
+    "change c section of airline
+    let g:airline_section_c = "%<%<%F%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
+    "change x section of airline
+    let g:airline_section_x = "%{airline#util#prepend(\"\",0)}%{airline#util#wrap(airline#parts#filetype(),0)} %{HumanSize(line2byte(line(\"$\")+1)-1)}"
+    "change z section of airline
+    let g:airline_section_z = "%-4P% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3c%V"
 endfunction

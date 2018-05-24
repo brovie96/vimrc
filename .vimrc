@@ -3,6 +3,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+"start up pathogen
+call pathogen#infect()
+
 "enable mouse
 set mouse=a
 
