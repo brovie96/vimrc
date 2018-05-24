@@ -10,8 +10,8 @@ call pathogen#helptags()
 "enable mouse
 set mouse=a
 
-"build statusline
-call statusline#buildstatusline()
+"configure statusline
+call statusline#configurestatusline()
 
 "load trailing whitespace stuff
 runtime trailingwhitespace.vim

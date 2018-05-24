@@ -23,8 +23,8 @@ function! HumanSize(bytes) abort
     endif
 endfunction
 
-"function to build statusline
-function! statusline#buildstatusline() abort
+"function to configure statusline
+function! statusline#configurestatusline() abort
     "update symbols
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
