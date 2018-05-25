@@ -13,4 +13,6 @@ repository, be sure to run `git submodule update --init` to initialize and
 download Airline and Fugitive into the `.vim/bundle` folder for pathogen.vim
 to load. After that, you should be able to make symlinks to the `.vim` folder,
 `.vimrc`, and optionally `.gvimrc` in your home directory and it should work
-without any further configuration.
+without any further configuration. When pulling this repository, remember to
+run `git submodule update --init` again to make sure any new submodules and
+submodule commits are added.
