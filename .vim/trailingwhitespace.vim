@@ -38,6 +38,8 @@ function! s:ClearTrailingWhitespace() abort
         normal! zt
         "return cursor to starting position
         call setpos('.', startpos)
+    else
+        echo "File is nonmodifiable."
     endif
 endfunction
 
