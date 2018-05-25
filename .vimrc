@@ -10,6 +10,9 @@ Helptags
 "enable mouse
 set mouse=a
 
+"make sure terminal is in 256-color mode
+set t_Co=256
+
 "configure statusline
 call statusline#configurestatusline()
 
