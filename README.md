@@ -6,7 +6,7 @@ prettier.
 ### Installing
 Make sure you have a version of Vim that is compatible with
 [pathogen.vim](https://github.com/tpope/vim-pathogen/) (v7.0 or newer), since
-that it is used in order to load
+it is used in order to load
 [Airline](https://github.com/vim-airline/vim-airline/) and
 [Fugitive](https://github.com/tpope/vim-fugitive/). After cloning the
 repository, be sure to run `git submodule update --init` to initialize and
