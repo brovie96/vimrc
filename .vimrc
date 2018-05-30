@@ -3,6 +3,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+"make sure colorscheme shows up correctly
+set background=light
+
 "start up pathogen
 call pathogen#infect()
 Helptags
