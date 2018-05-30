@@ -26,11 +26,11 @@ function! s:ClearTrailingWhitespace() abort
         "command line)
         execute topline
 
-        "use ^E with number of lines to scroll in order to move topline to the
-        "top of the window
+        "use <C-E> with number of lines to scroll in order to move topline to
+        "the top of the window
         let topdist = topline - line('w0')
         if topdist > 0
-            execute 'normal! ' . topdist . ''
+            execute "normal! " . topdist . "\<C-E>"
         endif
 
         "return cursor to starting position
