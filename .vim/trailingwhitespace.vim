@@ -15,18 +15,24 @@ function! s:ClearTrailingWhitespace() abort
         "hold on to cursor position (also gets preferred column, so nothing
         "changes)
         let startpos = getcurpos()
+
         "get the top line of the window
         let topline = line('w0')
 
         "remove the trailing whitespace, silencing errors if none is found
         %substitute/\s\+$//e
+
         "return cursor to topline (same as typing ':<topline>' into the
         "command line)
         execute topline
-        "move topline to top of window with repeated scrolling (using ^E)
-        while line('w0') != topline
-            normal! 
-        endwhile
+
+        "use ^E with number of lines to scroll in order to move topline to the
+        "top of the window
+        let topdist = topline - line('w0')
+        if topdist > 0
+            exec 'normal! ' . topdist . ''
+        endif
+
         "return cursor to starting position
         call setpos('.', startpos)
     else
