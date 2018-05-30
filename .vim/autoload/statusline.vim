@@ -25,20 +25,22 @@ endfunction
 
 "function to configure statusline
 function! statusline#configurestatusline() abort
-    "update symbols
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
+    "update symbols if utf-8 is being used
+    if &encoding == 'utf-8'
+        if !exists('g:airline_symbols')
+            let g:airline_symbols = {}
+        endif
+        let g:airline_left_sep = '▶'
+        let g:airline_right_sep = '◀'
+        let g:airline_symbols.crypt = '🔒'
+        let g:airline_symbols.linenr = '␊'
+        let g:airline_symbols.maxlinenr = ''
+        let g:airline_symbols.branch = '⎇'
+        let g:airline_symbols.paste = 'ρ'
+        let g:airline_symbols.spell = 'Ꞩ'
+        let g:airline_symbols.notexists = 'Ɇ'
+        let g:airline_symbols.whitespace = 'Ξ'
     endif
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.spell = 'Ꞩ'
-    let g:airline_symbols.notexists = 'Ɇ'
-    let g:airline_symbols.whitespace = 'Ξ'
 
     "change c section of airline
     let g:airline_section_c = "%<%<%F%m %{HumanSize(line2byte(line(\"$\")+1)-1)} %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
