@@ -20,9 +20,10 @@ function! s:ClearTrailingWhitespace() abort
 
         "remove the trailing whitespace, silencing errors if none is found
         %substitute/\s\+$//e
-        "return cursor to topline
+        "return cursor to topline (same as typing ':<topline>' into the
+        "command line)
         execute topline
-        "move topline to top of window with repeated scrolling
+        "move topline to top of window with repeated scrolling (using ^E)
         while line('w0') != topline
             normal! 
         endwhile
