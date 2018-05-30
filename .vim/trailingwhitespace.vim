@@ -15,27 +15,17 @@ function! s:ClearTrailingWhitespace() abort
         "hold on to cursor position (also gets preferred column, so nothing
         "changes)
         let startpos = getcurpos()
-        "get the top line of the screen without using a jump
+        "get the top line of the window
         let topline = line('w0')
-
-        "set the proper line to call zt from if scrolloff is greater than 0
-        if topline > 1
-            "make sure scrolloff being maxed out doesn't screw up anything (tests
-            "are inconclusive, but just making sure)
-            if &scrolloff >= ceil(winheight(0) / 2.0)
-                let topline = line('.')
-            else
-                let topline += &scrolloff
-            endif
-        endif
 
         "remove the trailing whitespace, silencing errors if none is found
         %substitute/\s\+$//e
         "return cursor to topline
         execute topline
-        "move topline to the top of the screen (or as close as scrolloff will let
-        "it get)
-        normal! zt
+        "move topline to top of window with repeated scrolling
+        while line('w0') != topline
+            normal! 
+        endwhile
         "return cursor to starting position
         call setpos('.', startpos)
     else
