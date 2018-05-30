@@ -30,7 +30,7 @@ function! s:ClearTrailingWhitespace() abort
         "top of the window
         let topdist = topline - line('w0')
         if topdist > 0
-            exec 'normal! ' . topdist . ''
+            execute 'normal! ' . topdist . ''
         endif
 
         "return cursor to starting position
