@@ -10,6 +10,10 @@ Helptags
 "enable mouse
 set mouse=a
 
+"show commands in the bottom row (useful for checking normal mode commands as
+"they are typed)
+set showcmd
+
 "make sure terminal is in 256-color mode
 set t_Co=256
 
