@@ -9,6 +9,9 @@ set background=light
 "turn on advanced command-line completion
 set wildmenu
 
+"make joined lines have single-spaced sentences
+set nojoinspaces
+
 "start up pathogen
 call pathogen#infect()
 Helptags
