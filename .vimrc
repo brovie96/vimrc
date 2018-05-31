@@ -6,6 +6,9 @@ set softtabstop=4
 "make sure colorscheme shows up correctly
 set background=light
 
+"turn on advanced command-line completion
+set wildmenu
+
 "start up pathogen
 call pathogen#infect()
 Helptags
