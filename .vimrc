@@ -22,9 +22,6 @@ set showcmd
 "make sure terminal is in 256-color mode
 set t_Co=256
 
-"load trailing whitespace stuff
-runtime trailingwhitespace.vim
-
 "add a confirmation dialog on :q and others
 set confirm
 
@@ -60,6 +57,9 @@ set sidescroll=20
 "map <leader><Tab> and <leader><S-Tab> to switch tabs
 nnoremap <silent> <leader><Tab> :tabnext<cr>
 nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
+
+"load trailing whitespace stuff
+runtime trailingwhitespace.vim
 
 "start up pathogen
 call pathogen#infect()
