@@ -9,8 +9,8 @@ augroup END
 
 "create function to remove trailing whitespace
 function! s:ClearTrailingWhitespace() abort
-    "make sure trying this in a nonmodifiable file just does nothing instead
-    "of throwing an error
+    "make sure trying this in a nonmodifiable file just prints a message
+    "instead of throwing an error
     if &modifiable
         "hold on to cursor position (also gets preferred column, so nothing
         "changes)
@@ -26,14 +26,17 @@ function! s:ClearTrailingWhitespace() abort
         "topline to the top of the window
         let topdist = topline - line('w0')
         if topdist > 0
+            "scroll window down
             execute "normal! " . topdist . "\<C-E>"
         elseif topdist < 0
+            "scroll window up
             execute "normal! " . topdist . "\<C-Y>"
         endif
 
         "return cursor to starting position
         call setpos('.', startpos)
     else
+        "print message
         echo "File is nonmodifiable."
     endif
 endfunction
