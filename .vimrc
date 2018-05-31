@@ -12,10 +12,6 @@ set wildmenu
 "make joined lines have single-spaced sentences
 set nojoinspaces
 
-"start up pathogen
-call pathogen#infect()
-Helptags
-
 "enable mouse
 set mouse=a
 
@@ -25,15 +21,6 @@ set showcmd
 
 "make sure terminal is in 256-color mode
 set t_Co=256
-
-"configure statusline using airline
-call statusline#configurestatusline()
-
-"set up airline's tabline
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_buffers=0
-let g:airline#extensions#tabline#show_tab_nr=0
-let g:airline#extensions#tabline#tab_min_count=2
 
 "load trailing whitespace stuff
 runtime trailingwhitespace.vim
@@ -73,3 +60,16 @@ set sidescroll=20
 "map <leader><Tab> and <leader><S-Tab> to switch tabs
 nnoremap <silent> <leader><Tab> :tabnext<cr>
 nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
+
+"start up pathogen
+call pathogen#infect()
+Helptags
+
+"configure statusline using airline
+call statusline#configurestatusline()
+
+"set up airline's tabline
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_buffers=0
+let g:airline#extensions#tabline#show_tab_nr=0
+let g:airline#extensions#tabline#tab_min_count=2
