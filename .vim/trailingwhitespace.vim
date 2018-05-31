@@ -22,15 +22,13 @@ function! s:ClearTrailingWhitespace() abort
         "remove the trailing whitespace, silencing errors if none is found
         %substitute/\s\+$//e
 
-        "return cursor to topline (same as typing ':<topline>' into the
-        "command line)
-        execute topline
-
-        "use <C-E> with number of lines to scroll in order to move topline to
-        "the top of the window
+        "use <C-E> or <C-Y> with number of lines to scroll in order to move
+        "topline to the top of the window
         let topdist = topline - line('w0')
         if topdist > 0
             execute "normal! " . topdist . "\<C-E>"
+        elseif topdist < 0
+            execute "normal! " . topdist . "\<C-Y>"
         endif
 
         "return cursor to starting position
