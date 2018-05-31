@@ -65,5 +65,5 @@ set nowrap
 set sidescroll=20
 
 "map <leader><Tab> and <leader><S-Tab> to switch tabs
-nnoremap <silent> <leader><Tab> :tabn<cr>
-nnoremap <silent> <leader><S-Tab> :tabp<cr>
+nnoremap <silent> <leader><Tab> :tabnext<cr>
+nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
