@@ -17,7 +17,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 
 "load webapi-vim
-Plug 'mattn/webapi-vim', { 'on': 'Gist' }
+Plug 'mattn/webapi-vim'
 
 "load gist-vim
 Plug 'mattn/gist-vim', { 'on': 'Gist' }
