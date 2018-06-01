@@ -22,11 +22,11 @@ Plug 'mattn/webapi-vim'
 "load gist-vim
 Plug 'mattn/gist-vim', { 'on': 'Gist' }
 
-"load vim-lion
-Plug 'tommcdo/vim-lion'
-
 "load vim-plug (for help file)
 Plug 'junegunn/vim-plug'
+
+"load vim-easy-align
+Plug 'junegunn/vim-easy-align'
 
 "update runtime path and init vim-plug
 call plug#end()
