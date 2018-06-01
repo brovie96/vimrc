@@ -61,9 +61,13 @@ nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
 "load trailing whitespace stuff
 runtime trailingwhitespace.vim
 
-"start up pathogen
-call pathogen#infect()
-Helptags
+"startup vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
 
 "configure statusline using airline
 call statusline#configurestatusline()

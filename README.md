@@ -9,14 +9,12 @@ strongly discourage using someone else's Vim configuration, but if you really
 want to use mine, here's how to set it up.
 
 Make sure you have a version of Vim that is compatible with
-[pathogen.vim](https://github.com/tpope/vim-pathogen/) (v7.0 or newer), since
-it is used in order to load
+[vim-plug](https://github.com/junegunn/vim-plug) (7.0 or newer, 8.0
+recommended), since is is used in order to load the plugins. After cloning the
+repository, make symlinks to the `.vim` folder, `.vimrc`, and optionally
+`.gvimrc` so that Vim will load them. Next, start Vim and run `:PlugInstall`
+so that vim-plug will download
 [Airline](https://github.com/vim-airline/vim-airline/) and
-[Fugitive](https://github.com/tpope/vim-fugitive/). After cloning the
-repository, be sure to run `git submodule update --init` to initialize and
-download Airline and Fugitive into the `.vim/bundle` folder for pathogen.vim to
-load. After that, you should be able to make symlinks to the `.vim` folder,
-`.vimrc`, and optionally `.gvimrc` in your home directory and it should work
-without any further configuration. When pulling this repository, remember to
-run `git submodule update --init` again to make sure any new submodules and
-submodule commits are added.
+[Fugitive](https://github.com/tpope/vim-fugitive/) to the `.vim/plugged`
+folder to be run. Remember to periodically run `:PlugUpdate` in Vim to make
+sure the plugins are up to date.
