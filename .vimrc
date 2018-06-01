@@ -61,12 +61,16 @@ nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
 "load trailing whitespace stuff
 runtime trailingwhitespace.vim
 
-"startup vim-plug
+"start configuring vim-plug
 call plug#begin('~/.vim/plugged')
 
+"load vim-airline
 Plug 'vim-airline/vim-airline'
+
+"load vim-fugitive
 Plug 'tpope/vim-fugitive'
 
+"update runtime path and init vim-plug
 call plug#end()
 
 "configure statusline using airline
