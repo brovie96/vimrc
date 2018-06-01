@@ -1,5 +1,9 @@
 "start configuring vim-plug
-call plug#begin('~/.vim/plugged')
+if has('unix')
+    call plug#begin($HOME . '/.vim/plugged')
+elseif has('win32')
+    call plug#begin($HOME . '\vimfiles\plugged')
+endif
 
 "load vim-airline
 Plug 'vim-airline/vim-airline'
