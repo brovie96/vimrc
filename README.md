@@ -17,3 +17,5 @@ and optionally `.gvimrc` so that Vim will load them. Next, start Vim and run
 `:PlugInstall` so that vim-plug will download the plugins to the
 `.vim/plugged` folder. Remember to periodically run `:PlugUpdate` in Vim to
 make sure the plugins are up to date and to load new plugins if available.
+Also periodically run `:PlugClean` to remove downloaded plugins that are no
+longer being loaded.
