@@ -1,3 +1,7 @@
+"set nocompatible explicitly to make sure tweekmonster/startuptime.vim doesn't
+"have weird issues
+set nocompatible
+
 "use soft tabs of 4 spaces
 set expandtab
 set shiftwidth=4
