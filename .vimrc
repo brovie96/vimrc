@@ -62,7 +62,7 @@ nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
 runtime trailingwhitespace.vim
 
 "load plugins
-runtime plugins.vim
+runtime loadplugins.vim
 
 "configure statusline using airline
 call statusline#configurestatusline()
