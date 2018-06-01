@@ -62,17 +62,4 @@ nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
 runtime trailingwhitespace.vim
 
 "load plugins
-runtime loadplugins.vim
-
-"configure statusline using airline
-call statusline#configurestatusline()
-
-"set up airline's tabline
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_buffers=0
-let g:airline#extensions#tabline#show_tab_nr=0
-let g:airline#extensions#tabline#tab_min_count=2
-
-"set up vim-easy-align commands
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+runtime pluginsetup.vim
