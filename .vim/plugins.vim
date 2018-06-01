@@ -22,5 +22,8 @@ Plug 'mattn/webapi-vim'
 "load gist-vim
 Plug 'mattn/gist-vim', { 'on': 'Gist' }
 
+"load vim-lion
+Plug 'tommcdo/vim-lion'
+
 "update runtime path and init vim-plug
 call plug#end()
