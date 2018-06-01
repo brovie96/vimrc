@@ -40,5 +40,8 @@ Plug 'jwalton512/vim-blade'
 "load nginx.vim
 Plug 'chr4/nginx.vim'
 
+"load vim-eunuch
+Plug 'tpope/vim-eunuch'
+
 "update runtime path and init vim-plug
 call plug#end()
