@@ -50,6 +50,9 @@ Plug 'tpope/vim-eunuch'
 "load VimCompletesMe
 Plug 'ajh17/VimCompletesMe'
 
+"load ale
+Plug 'w0rp/ale'
+
 "update runtime path and init vim-plug
 call plug#end()
 
