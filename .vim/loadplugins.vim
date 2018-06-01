@@ -25,5 +25,8 @@ Plug 'mattn/gist-vim', { 'on': 'Gist' }
 "load vim-lion
 Plug 'tommcdo/vim-lion'
 
+"load vim-plug (for help file)
+Plug 'junegunn/vim-plug'
+
 "update runtime path and init vim-plug
 call plug#end()
