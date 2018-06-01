@@ -16,5 +16,11 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 "load startuptime.vim
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 
+"load webapi-vim
+Plug 'mattn/webapi-vim', { 'on': 'Gist' }
+
+"load gist-vim
+Plug 'mattn/gist-vim', { 'on': 'Gist' }
+
 "update runtime path and init vim-plug
 call plug#end()
