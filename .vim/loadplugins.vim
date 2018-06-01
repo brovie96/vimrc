@@ -35,10 +35,10 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-repeat'
 
 "load vim-blade
-Plug 'jwalton512/vim-blade', { 'for': 'blade' }
+Plug 'jwalton512/vim-blade'
 
 "load nginx.vim
-Plug 'chr4/nginx.vim', { 'for': 'nginx' }
+Plug 'chr4/nginx.vim'
 
 "update runtime path and init vim-plug
 call plug#end()
