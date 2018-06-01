@@ -47,6 +47,9 @@ Plug 'chr4/nginx.vim'
 "load vim-eunuch
 Plug 'tpope/vim-eunuch'
 
+"load VimCompletesMe
+Plug 'ajh17/VimCompletesMe'
+
 "update runtime path and init vim-plug
 call plug#end()
 
