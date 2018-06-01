@@ -63,5 +63,5 @@ let g:airline#extensions#tabline#show_tab_nr=0
 let g:airline#extensions#tabline#tab_min_count=2
 
 "set up vim-easy-align commands
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+xmap gl <Plug>(EasyAlign)
+nmap gl <Plug>(EasyAlign)
