@@ -11,7 +11,7 @@ want to use mine, here's how to set it up.
 Make sure you have a version of Vim that is compatible with
 [vim-plug](https://github.com/junegunn/vim-plug/) (7.0 or newer, 8.0
 recommended), since it is used in order to load [various
-plugins](https://github.com/brovie96/vimrc/blob/master/.vim/loadplugins.vim/).
+plugins](https://github.com/brovie96/vimrc/blob/master/.vim/pluginsetup.vim/).
 After cloning the repository, make symlinks to the `.vim` folder, `.vimrc`,
 and optionally `.gvimrc` so that Vim will load them. Next, start Vim and run
 `:PlugInstall` so that vim-plug will download the plugins to the
