@@ -28,5 +28,11 @@ Plug 'junegunn/vim-plug'
 "load vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
+"load vim-speeddating
+Plug 'tpope/vim-speeddating'
+
+"load vim-repeat
+Plug 'tpope/vim-repeat'
+
 "update runtime path and init vim-plug
 call plug#end()
