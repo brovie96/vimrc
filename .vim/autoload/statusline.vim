@@ -149,7 +149,6 @@ function! statusline#configurestatusline() abort
         \   'filetype': 'LightlineFiletype'
         \ },
         \ 'component': {
-        \   'lineinfoextended': '%l:%c%V',
         \   'rulerpercent': '%P'
         \ },
         \ 'component_expand': {
