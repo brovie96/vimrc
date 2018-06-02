@@ -5,9 +5,6 @@ elseif has('win32')
     call plug#begin($HOME . '\vimfiles\plugged')
 endif
 
-"load vim-airline
-Plug 'vim-airline/vim-airline'
-
 "load vim-fugitive
 Plug 'tpope/vim-fugitive'
 
@@ -53,17 +50,26 @@ Plug 'ajh17/VimCompletesMe'
 "load ale
 Plug 'w0rp/ale'
 
+"load lightline
+Plug 'itchyny/lightline.vim'
+
 "update runtime path and init vim-plug
 call plug#end()
 
 "configure statusline using airline
 call statusline#configurestatusline()
 
-"set up airline's tabline
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_buffers=0
-let g:airline#extensions#tabline#show_tab_nr=0
-let g:airline#extensions#tabline#tab_min_count=2
+"set up lightline's tabline
+
+let g:lightline.tabline = {
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [ ]
+    \ }
+
+let g:lightline.tab = {
+    \ 'active': [ 'filename', 'modified' ],
+    \ 'inactive': [ 'filename', 'modified' ]
+    \ }
 
 "set up vim-easy-align commands
 xmap gl <Plug>(EasyAlign)

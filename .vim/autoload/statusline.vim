@@ -4,7 +4,7 @@
 "(updates with typing as well)
 function! HumanSize(bytes) abort
     if a:bytes < 0
-        return ''
+        return '0 B'
     endif
 
     let l:bytes = a:bytes
@@ -17,33 +17,32 @@ function! HumanSize(bytes) abort
     endwhile
 
     if l:i > 0
-        return printf('(%.2f %s)', l:bytes, l:sizes[l:i])
+        return printf('%.2f %s', l:bytes, l:sizes[l:i])
     else
-        return printf('(%.0f %s)', l:bytes, l:sizes[l:i])
+        return printf('%.0f %s', l:bytes, l:sizes[l:i])
     endif
 endfunction
 
 "function to configure statusline
 function! statusline#configurestatusline() abort
-    "update symbols if utf-8 is being used
-    if &encoding == 'utf-8'
-        if !exists('g:airline_symbols')
-            let g:airline_symbols = {}
-        endif
-        let g:airline_left_sep = '▶'
-        let g:airline_right_sep = '◀'
-        let g:airline_symbols.crypt = '🔒'
-        let g:airline_symbols.linenr = '␊'
-        let g:airline_symbols.maxlinenr = ''
-        let g:airline_symbols.branch = '⎇'
-        let g:airline_symbols.paste = 'ρ'
-        let g:airline_symbols.spell = 'Ꞩ'
-        let g:airline_symbols.notexists = 'Ɇ'
-        let g:airline_symbols.whitespace = 'Ξ'
-    endif
-
-    "change c section of airline
-    let g:airline_section_c = "%<%<%F%m %{HumanSize(line2byte(line(\"$\")+1)-1)} %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#"
-    "change z section of airline
-    let g:airline_section_z = "%-4P% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%7(%c%V%)"
+    "configure lightline
+    let g:lightline = {
+        \ 'colorscheme': 'powerline',
+        \ 'active': {
+        \   'left':  [ [ 'mode', 'paste' ],
+        \              [ 'gitbranch', 'readonly', 'filepath', 'modified', 'humansize' ] ],
+        \   'right': [ [ 'lineinfoextended' ],
+        \              [ 'rulerpercent' ],
+        \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'fugitive#head'
+        \ },
+        \ 'component': {
+        \   'filepath': '%F',
+        \   'humansize': '%{HumanSize(line2byte(line("$")+1)-1)}',
+        \   'lineinfoextended': '%l:%c%V',
+        \   'rulerpercent': '%P'
+        \ }
+        \ }
 endfunction

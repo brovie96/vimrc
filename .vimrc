@@ -2,6 +2,9 @@
 "have weird issues
 set nocompatible
 
+"show statusline
+set laststatus=2
+
 "use soft tabs of 4 spaces
 set expandtab
 set shiftwidth=4
