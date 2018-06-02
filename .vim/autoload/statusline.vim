@@ -39,6 +39,75 @@ function! LightlineMode()
           \ lightline#mode()
 endfunction
 
+
+"display filepath when not using a plugin
+function! LightlineFilepath()
+    return expand('%:t') ==# '__Tagbar__' ? '':
+          \ expand('%:t') ==# 'ControlP' ? '' :
+          \ &filetype ==# 'unite' ? '' :
+          \ &filetype ==# 'vimfiler' ? '' :
+          \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'vim-plug' ? '' :
+          \ fnamemodify(expand('%:p'), ':~')
+endfunction
+
+"display modified when not using a plugin
+function! LightlineModified()
+    return expand('%:t') ==# '__Tagbar__' ? '':
+          \ expand('%:t') ==# 'ControlP' ? '' :
+          \ &filetype ==# 'unite' ? '' :
+          \ &filetype ==# 'vimfiler' ? '' :
+          \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'vim-plug' ? '' :
+          \ &modified ? ',+' :
+          \ !&modifiable ? ',-' :
+          \ ''
+endfunction
+
+"display humansize when not using a plugin
+function! LightlineHumansize()
+    return expand('%:t') ==# '__Tagbar__' ? '':
+          \ expand('%:t') ==# 'ControlP' ? '' :
+          \ &filetype ==# 'unite' ? '' :
+          \ &filetype ==# 'vimfiler' ? '' :
+          \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'vim-plug' ? '' :
+          \ HumanSize(line2byte(line("$")+1)-1)
+endfunction
+
+"display fileformat when not using a plugin
+function! LightlineFileformat()
+    return expand('%:t') ==# '__Tagbar__' ? '':
+          \ expand('%:t') ==# 'ControlP' ? '' :
+          \ &filetype ==# 'unite' ? '' :
+          \ &filetype ==# 'vimfiler' ? '' :
+          \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'vim-plug' ? '' :
+          \ &ff
+endfunction
+
+"display fileencoding when not using a plugin
+function! LightlineFileencoding()
+    return expand('%:t') ==# '__Tagbar__' ? '':
+          \ expand('%:t') ==# 'ControlP' ? '' :
+          \ &filetype ==# 'unite' ? '' :
+          \ &filetype ==# 'vimfiler' ? '' :
+          \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'vim-plug' ? '' :
+          \ &fenc !=# "" ? &fenc : &enc
+endfunction
+
+"display filetype when not using a plugin
+function! LightlineFiletype()
+    return expand('%:t') ==# '__Tagbar__' ? '':
+          \ expand('%:t') ==# 'ControlP' ? '' :
+          \ &filetype ==# 'unite' ? '' :
+          \ &filetype ==# 'vimfiler' ? '' :
+          \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'vim-plug' ? '' :
+          \ &ft !=# "" ? &ft : "no ft"
+endfunction
+
 "function to configure statusline
 function! statusline#configurestatusline() abort
     "configure lightline
@@ -53,13 +122,17 @@ function! statusline#configurestatusline() abort
         \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
         \ },
         \ 'component_function': {
+        \   'mode': 'LightlineMode',
         \   'gitbranch': 'fugitive#head',
         \   'readonly': 'LightlineReadonly',
-        \   'mode': 'LightlineMode'
+        \   'filepath': 'LightlineFilepath',
+        \   'modified': 'LightlineModified',
+        \   'humansize': 'LightlineHumansize',
+        \   'fileformat': 'LightlineFileformat',
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'filetype': 'LightlineFiletype'
         \ },
         \ 'component': {
-        \   'filepath': '%F',
-        \   'humansize': '%{HumanSize(line2byte(line("$")+1)-1)}',
         \   'lineinfoextended': '%l:%c%V',
         \   'rulerpercent': '%P'
         \ },
