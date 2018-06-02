@@ -59,7 +59,7 @@ Plug 'maximbaz/lightline-ale'
 "update runtime path and init vim-plug
 call plug#end()
 
-"configure statusline using airline
+"configure statusline using lightline
 call statusline#configurestatusline()
 
 "set up lightline's tabline
