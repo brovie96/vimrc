@@ -35,7 +35,7 @@ function! LightlineMode()
           \ &filetype ==# 'unite' ? 'Unite' :
           \ &filetype ==# 'vimfiler' ? 'VimFiler' :
           \ &filetype ==# 'vimshell' ? 'VimShell' :
-          \ &filetype ==# 'vim-plug' ? 'Plugin' :
+          \ &filetype ==# 'vim-plug' ? 'Plugins' :
           \ lightline#mode()
 endfunction
 
