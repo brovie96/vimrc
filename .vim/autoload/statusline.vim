@@ -23,6 +23,22 @@ function! HumanSize(bytes) abort
     endif
 endfunction
 
+"hides read-only marker in help files
+function! LightlineReadonly()
+    return &readonly && &filetype !=# 'help' ? 'RO' : ''
+endfunction
+
+"display plugin name at mode, when applicable
+function! LightlineMode()
+    return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
+          \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
+          \ &filetype ==# 'unite' ? 'Unite' :
+          \ &filetype ==# 'vimfiler' ? 'VimFiler' :
+          \ &filetype ==# 'vimshell' ? 'VimShell' :
+          \ &filetype ==# 'vim-plug' ? 'Plugin' :
+          \ lightline#mode()
+endfunction
+
 "function to configure statusline
 function! statusline#configurestatusline() abort
     "configure lightline
@@ -37,7 +53,9 @@ function! statusline#configurestatusline() abort
         \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
         \ },
         \ 'component_function': {
-        \   'gitbranch': 'fugitive#head'
+        \   'gitbranch': 'fugitive#head',
+        \   'readonly': 'LightlineReadonly',
+        \   'mode': 'LightlineMode'
         \ },
         \ 'component': {
         \   'filepath': '%F',
@@ -46,16 +64,16 @@ function! statusline#configurestatusline() abort
         \   'rulerpercent': '%P'
         \ },
         \ 'component_expand': {
-        \  'linter_checking': 'lightline#ale#checking',
-        \  'linter_warnings': 'lightline#ale#warnings',
-        \  'linter_errors': 'lightline#ale#errors',
-        \  'linter_ok': 'lightline#ale#ok',
+        \   'linter_checking': 'lightline#ale#checking',
+        \   'linter_warnings': 'lightline#ale#warnings',
+        \   'linter_errors': 'lightline#ale#errors',
+        \   'linter_ok': 'lightline#ale#ok',
         \ },
         \ 'component_type': {
-        \  'linter_checking': 'left',
-        \  'linter_warnings': 'warning',
-        \  'linter_errors': 'error',
-        \  'linter_ok': 'left',
+        \   'linter_checking': 'left',
+        \   'linter_warnings': 'warning',
+        \   'linter_errors': 'error',
+        \   'linter_ok': 'left',
         \ }
         \ }
 endfunction
