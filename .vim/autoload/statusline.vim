@@ -75,6 +75,21 @@ function! LightlineHumansize()
           \ HumanSize(line2byte(line("$")+1)-1)
 endfunction
 
+"display lineinfoextended when not using a plugin
+function! LightlineLineinfoextended()
+    let col = printf('%d', (getline('.') == '' ? 0 : col('.')))
+    if col('.') != virtcol('.') || getline('.') == ''
+        let col = col . printf('-%d', virtcol('.'))
+    endif
+    return expand('%:t') ==# '__Tagbar__' ? '':
+          \ expand('%:t') ==# 'ControlP' ? '' :
+          \ &filetype ==# 'unite' ? '' :
+          \ &filetype ==# 'vimfiler' ? '' :
+          \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'vim-plug' ? '' :
+          \ printf('%d:%s', line('.'), col)
+endfunction
+
 "display fileformat when not using a plugin
 function! LightlineFileformat()
     return expand('%:t') ==# '__Tagbar__' ? '':
@@ -128,6 +143,7 @@ function! statusline#configurestatusline() abort
         \   'filepath': 'LightlineFilepath',
         \   'modified': 'LightlineModified',
         \   'humansize': 'LightlineHumansize',
+        \   'lineinfoextended': 'LightlineLineinfoextended',
         \   'fileformat': 'LightlineFileformat',
         \   'fileencoding': 'LightlineFileencoding',
         \   'filetype': 'LightlineFiletype'
