@@ -50,8 +50,11 @@ Plug 'ajh17/VimCompletesMe'
 "load ale
 Plug 'w0rp/ale'
 
-"load lightline
+"load lightline.vim
 Plug 'itchyny/lightline.vim'
+
+"load lightline-ale
+Plug 'maximbaz/lightline-ale'
 
 "update runtime path and init vim-plug
 call plug#end()
