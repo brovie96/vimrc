@@ -83,7 +83,7 @@ function! LightlineFileformat()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ &ff
+          \ &fileformat
 endfunction
 
 "display fileencoding when not using a plugin
@@ -94,7 +94,7 @@ function! LightlineFileencoding()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ &fenc !=# "" ? &fenc : &enc
+          \ &fileencoding !=# "" ? &fileencoding : &encoding
 endfunction
 
 "display filetype when not using a plugin
@@ -105,7 +105,7 @@ function! LightlineFiletype()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ &ft !=# "" ? &ft : "no ft"
+          \ &filetype !=# "" ? &filetype : "no ft"
 endfunction
 
 "function to configure statusline
