@@ -48,7 +48,8 @@ function! LightlineFilepath()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ fnamemodify(expand('%:p'), ':~')
+          \ expand('%:p') !=# '' ? fnamemodify(expand('%:p'), ':~') :
+          \ '[No Name]'
 endfunction
 
 "display modified when not using a plugin
