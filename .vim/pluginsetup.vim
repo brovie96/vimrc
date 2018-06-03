@@ -12,7 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 "load undotree
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'mbbill/undotree', { 'on': ['UndotreeFocus', 'UndotreeHide', 'UndotreeShow', 'UndotreeToggle'] }
 
 "load startuptime.vim
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
