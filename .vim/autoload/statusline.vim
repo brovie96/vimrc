@@ -163,6 +163,14 @@ function! statusline#configurestatusline() abort
         \   'linter_warnings': 'warning',
         \   'linter_errors': 'error',
         \   'linter_ok': 'left',
+        \ },
+        \ 'separator': {
+        \   'left': '',
+        \   'right': ''
+        \ },
+        \ 'subseparator': {
+        \   'left': '',
+        \   'right': ''
         \ }
         \ }
 endfunction
