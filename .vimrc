@@ -19,9 +19,6 @@ set wildmenu
 "make joined lines have single-spaced sentences
 set nojoinspaces
 
-"enable mouse
-set mouse=a
-
 "show commands in the bottom row (useful for checking normal mode commands as
 "they are typed)
 set showcmd
