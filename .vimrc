@@ -37,12 +37,8 @@ set confirm
 "insertion start point)
 set backspace=indent,eol,start
 
-"indentation/filetype options
+"enable autoindent
 set autoindent
-filetype plugin indent on
-
-"turn on syntax highlighting
-syntax on
 
 "turn on line numbers
 set number
