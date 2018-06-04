@@ -1,3 +1,6 @@
+"set encoding since multibyte chars are used
+scriptencoding utf-8
+
 "statusline functions
 
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline
@@ -74,14 +77,14 @@ function! LightlineHumansize()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ HumanSize(line2byte(line("$")+1)-1)
+          \ HumanSize(line2byte(line('$')+1)-1)
 endfunction
 
 "display lineinfoextended when not using a plugin
 function! LightlineLineinfoextended()
-    let col = printf('%d', (getline('.') == '' ? 0 : col('.')))
-    if col('.') != virtcol('.') || getline('.') == ''
-        let col = col . printf('-%d', virtcol('.'))
+    let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
+    if col('.') != virtcol('.') || getline('.') ==? ''
+        let l:col = l:col . printf('-%d', virtcol('.'))
     endif
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
@@ -89,7 +92,7 @@ function! LightlineLineinfoextended()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ printf('%d:%s', line('.'), col)
+          \ printf('%d:%s', line('.'), l:col)
 endfunction
 
 "display fileformat when not using a plugin
@@ -111,7 +114,7 @@ function! LightlineFileencoding()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ &fileencoding !=# "" ? &fileencoding : &encoding
+          \ &fileencoding !=# '' ? &fileencoding : &encoding
 endfunction
 
 "display filetype when not using a plugin
@@ -122,7 +125,7 @@ function! LightlineFiletype()
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
-          \ &filetype !=# "" ? &filetype : "no ft"
+          \ &filetype !=# '' ? &filetype : 'no ft'
 endfunction
 
 "function to configure statusline

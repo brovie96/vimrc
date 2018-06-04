@@ -12,32 +12,22 @@ function! s:ClearTrailingWhitespace() abort
     "make sure trying this in a nonmodifiable file just prints a message
     "instead of throwing an error
     if &modifiable
-        "hold on to cursor position (also gets preferred column, so nothing
-        "changes)
-        let startpos = getcurpos()
+        let l:lines = 0
+        let l:linenum = 1
+        for l:line in getline(1, '$')
+            if match(l:line, '\s\+$') > -1
+                let l:lines += 1
+                call setline(l:linenum, substitute(l:line, '\s\+$', '', ''))
+            endif
+            let l:linenum += 1
+        endfor
 
-        "get the top line of the window
-        let topline = line('w0')
-
-        "remove the trailing whitespace, silencing errors if none is found
-        %substitute/\s\+$//e
-
-        "use <C-E> or <C-Y> with number of lines to scroll in order to move
-        "topline to the top of the window
-        let topdist = topline - line('w0')
-        if topdist > 0
-            "scroll window down
-            execute "normal! " . topdist . "\<C-E>"
-        elseif topdist < 0
-            "scroll window up
-            execute "normal! " . topdist . "\<C-Y>"
+        if l:lines > 0
+            echom printf('%d substitutions on %d lines', l:lines, l:lines)
         endif
-
-        "return cursor to starting position
-        call setpos('.', startpos)
     else
         "print message
-        echo "File is nonmodifiable."
+        echo 'File is nonmodifiable.'
     endif
 endfunction
 
