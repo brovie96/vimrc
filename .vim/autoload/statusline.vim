@@ -43,7 +43,6 @@ function! LightlineMode() abort "{{{
           \ lightline#mode()
 endfunction "}}}
 
-
 "display filepath when not using a plugin
 function! LightlineFilepath() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
