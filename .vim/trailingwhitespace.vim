@@ -12,6 +12,9 @@ function! s:ClearTrailingWhitespace() abort
     "make sure trying this in a nonmodifiable file just prints a message
     "instead of throwing an error
     if &modifiable
+        "print 'Working...' message
+        echo 'Working...'
+
         "set loop variables
         let l:lines = 0
         let l:linenum = 1
@@ -31,9 +34,15 @@ function! s:ClearTrailingWhitespace() abort
             let l:linenum += 1
         endfor
 
+        "redraw to avoid a multiline echo, which requires pressing enter to
+        "exit
+        redraw
+
         "mirror the message printed by :substitute
         if l:lines > 0
-            echom printf('%d substitutions on %d lines', l:lines, l:lines)
+            echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
+        else
+            echo 'No substitutions made'
         endif
     else
         "print message
