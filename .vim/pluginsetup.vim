@@ -5,9 +5,6 @@ elseif has('win32')
     call plug#begin($HOME . '\vimfiles\plugged')
 endif
 
-"load vim-fugitive
-Plug 'tpope/vim-fugitive'
-
 "load vim-surround
 Plug 'tpope/vim-surround'
 

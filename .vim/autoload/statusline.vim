@@ -135,7 +135,7 @@ function! statusline#configurestatusline() abort
         \ 'colorscheme': 'powerline',
         \ 'active': {
         \   'left':  [ [ 'mode', 'paste' ],
-        \              [ 'gitbranch', 'readonly', 'filepath', 'modified', 'humansize' ] ],
+        \              [ 'readonly', 'filepath', 'modified', 'humansize' ] ],
         \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
         \              [ 'lineinfoextended' ],
         \              [ 'rulerpercent' ],
@@ -143,7 +143,6 @@ function! statusline#configurestatusline() abort
         \ },
         \ 'component_function': {
         \   'mode': 'LightlineMode',
-        \   'gitbranch': 'fugitive#head',
         \   'readonly': 'LightlineReadonly',
         \   'filepath': 'LightlineFilepath',
         \   'modified': 'LightlineModified',
