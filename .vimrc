@@ -16,6 +16,10 @@ set background=light
 "turn on advanced command-line completion
 set wildmenu
 
+"turn on ignorecase and smartcase (mostly for wildmenu)
+set ignorecase
+set smartcase
+
 "make joined lines have single-spaced sentences
 set nojoinspaces
 
