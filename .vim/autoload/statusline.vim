@@ -5,7 +5,7 @@ scriptencoding utf-8
 
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline
 "(updates with typing as well)
-function! HumanSize(bytes) abort
+function! HumanSize(bytes) abort "{{{
     if a:bytes < 0
         return '0 B'
     endif
@@ -24,15 +24,15 @@ function! HumanSize(bytes) abort
     else
         return printf('%.0f %s', l:bytes, l:sizes[l:i])
     endif
-endfunction
+endfunction "}}}
 
 "hides read-only marker in help files
-function! LightlineReadonly()
+function! LightlineReadonly() abort "{{{
     return &readonly && &filetype !=# 'help' ? 'RO' : ''
-endfunction
+endfunction "}}}
 
 "display plugin name at mode, when applicable
-function! LightlineMode()
+function! LightlineMode() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
           \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
           \ &filetype ==# 'unite' ? 'Unite' :
@@ -41,11 +41,11 @@ function! LightlineMode()
           \ &filetype ==# 'vim-plug' ? 'Plugins' :
           \ &filetype ==# 'help' ? 'Help' :
           \ lightline#mode()
-endfunction
+endfunction "}}}
 
 
 "display filepath when not using a plugin
-function! LightlineFilepath()
+function! LightlineFilepath() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -54,10 +54,10 @@ function! LightlineFilepath()
           \ &filetype ==# 'vim-plug' ? '' :
           \ expand('%:p') !=# '' ? fnamemodify(expand('%:p'), ':~') :
           \ '[No Name]'
-endfunction
+endfunction "}}}
 
 "display modified when not using a plugin
-function! LightlineModified()
+function! LightlineModified() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -67,10 +67,10 @@ function! LightlineModified()
           \ &modified ? ',+' :
           \ !&modifiable ? ',-' :
           \ ''
-endfunction
+endfunction "}}}
 
 "display humansize when not using a plugin
-function! LightlineHumansize()
+function! LightlineHumansize() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -78,10 +78,10 @@ function! LightlineHumansize()
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
           \ HumanSize(line2byte(line('$')+1)-1)
-endfunction
+endfunction "}}}
 
 "display lineinfoextended when not using a plugin
-function! LightlineLineinfoextended()
+function! LightlineLineinfoextended() abort "{{{
     let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
     if col('.') != virtcol('.') || getline('.') ==? ''
         let l:col = l:col . printf('-%d', virtcol('.'))
@@ -93,10 +93,10 @@ function! LightlineLineinfoextended()
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
           \ printf('%d:%s', line('.'), l:col)
-endfunction
+endfunction "}}}
 
 "display fileformat when not using a plugin
-function! LightlineFileformat()
+function! LightlineFileformat() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -104,10 +104,10 @@ function! LightlineFileformat()
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
           \ &fileformat
-endfunction
+endfunction "}}}
 
 "display fileencoding when not using a plugin
-function! LightlineFileencoding()
+function! LightlineFileencoding() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -115,10 +115,10 @@ function! LightlineFileencoding()
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
           \ &fileencoding !=# '' ? &fileencoding : &encoding
-endfunction
+endfunction "}}}
 
 "display filetype when not using a plugin
-function! LightlineFiletype()
+function! LightlineFiletype() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -126,10 +126,10 @@ function! LightlineFiletype()
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'vim-plug' ? '' :
           \ &filetype !=# '' ? &filetype : 'no ft'
-endfunction
+endfunction "}}}
 
 "function to configure statusline
-function! statusline#configurestatusline() abort
+function! statusline#configurestatusline() abort "{{{
     "configure lightline
     let g:lightline = {
         \ 'colorscheme': 'powerline',
@@ -176,4 +176,7 @@ function! statusline#configurestatusline() abort
         \   'right': ''
         \ }
         \ }
-endfunction
+endfunction "}}}
+
+"modeline to turn folds on
+" vi:fdm=marker
