@@ -38,14 +38,15 @@ function! s:ClearTrailingWhitespace() abort
         "exit
         redraw
 
-        "mirror the message printed by :substitute
         if l:lines > 0
+            "mirror the message printed by :substitute
             echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
         else
+            "state that no lines were changed
             echo 'No substitutions made'
         endif
     else
-        "print message
+        "state that file is nonmodifiable
         echo 'File is nonmodifiable.'
     endif
 endfunction
