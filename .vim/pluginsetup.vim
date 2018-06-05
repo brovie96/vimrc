@@ -4,11 +4,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 "start configuring vim-plug
-if has('unix')
-    call plug#begin($HOME . '/.vim/plugged')
-elseif has('win32')
-    call plug#begin($HOME . '\vimfiles\plugged')
-endif
+call plug#begin($HOME . '/.vim/plugged')
 
 "load vim-surround
 Plug 'tpope/vim-surround'
