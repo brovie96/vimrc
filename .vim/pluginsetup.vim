@@ -12,7 +12,7 @@ Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree', { 'on': ['UndotreeFocus', 'UndotreeHide', 'UndotreeShow', 'UndotreeToggle'] }
 
 "load startuptime.vim
-Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
+Plug 'tweekmonster/startuptime.vim'
 
 "load gist-vim (depends on vebapi-vim)
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim', { 'on': 'Gist' }
