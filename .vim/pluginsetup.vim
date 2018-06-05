@@ -50,6 +50,9 @@ Plug 'itchyny/lightline.vim'
 "load lightline-ale
 Plug 'maximbaz/lightline-ale'
 
+"load hexmode
+Plug 'fidian/hexmode'
+
 "update runtime path and init vim-plug
 call plug#end()
 
