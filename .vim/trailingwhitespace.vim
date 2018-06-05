@@ -40,7 +40,11 @@ function! s:ClearTrailingWhitespace() abort
 
         if l:lines > 0
             "mirror the message printed by :substitute
-            echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
+            if l:lines == 1
+                echomsg 'One substitution on one line'
+            else
+                echomsg printf('%d substitutions on %d lines', l:lines, l:lines)
+            endif
         else
             "state that no lines were changed
             echo 'No substitutions made'
