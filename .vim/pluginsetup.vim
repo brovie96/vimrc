@@ -74,3 +74,6 @@ let g:lightline.tab = {
 "set up vim-easy-align commands
 xmap gl <Plug>(EasyAlign)
 nmap gl <Plug>(EasyAlign)
+
+"set up shortcut for undotree
+nnoremap <silent> <leader>ut :UndotreeToggle<cr>
