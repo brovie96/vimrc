@@ -54,6 +54,9 @@ Plug 'maximbaz/lightline-ale'
 "load hexmode
 Plug 'fidian/hexmode'
 
+"load vim-checklist
+Plug 'esalter-va/vim-checklist'
+
 "update runtime path and init vim-plug
 call plug#end()
 
@@ -68,5 +71,8 @@ let g:lightline.tab = { 'active': [ 'filename', 'modified' ], 'inactive': [ 'fil
 xmap gl <Plug>(EasyAlign)
 nmap gl <Plug>(EasyAlign)
 
-"set up shortcut for undotree
+"set up mapping for undotree
 nnoremap <silent> <leader>ut :UndotreeToggle<cr>
+
+"set up mapping for vim-checklist
+nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
