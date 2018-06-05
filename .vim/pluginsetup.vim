@@ -60,16 +60,8 @@ call plug#end()
 call statusline#configurestatusline()
 
 "set up lightline's tabline
-
-let g:lightline.tabline = {
-    \ 'left': [ [ 'tabs' ] ],
-    \ 'right': [ ]
-    \ }
-
-let g:lightline.tab = {
-    \ 'active': [ 'filename', 'modified' ],
-    \ 'inactive': [ 'filename', 'modified' ]
-    \ }
+let g:lightline.tabline = { 'left': [ [ 'tabs' ] ], 'right': [ ] }
+let g:lightline.tab = { 'active': [ 'filename', 'modified' ], 'inactive': [ 'filename', 'modified' ] }
 
 "set up vim-easy-align commands
 xmap gl <Plug>(EasyAlign)
