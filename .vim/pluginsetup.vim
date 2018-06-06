@@ -57,6 +57,9 @@ Plug 'fidian/hexmode'
 "load vim-checklist
 Plug 'esalter-va/vim-checklist'
 
+"load vim-commentary
+Plug 'tpope/vim-commentary'
+
 "update runtime path and init vim-plug
 call plug#end()
 
