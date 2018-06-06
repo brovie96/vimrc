@@ -1,7 +1,7 @@
 # vimrc
 This is my personal configuration for [Vim](http://www.vim.org/). It includes
-some changes to the Vim defaults that make it easier for me to use and a bit
-prettier.
+several changes to the Vim defaults that provide a lot of additional
+functionality and make the UI a bit prettier.
 
 ### Installing
 Most online sources (including [the Vim subreddit](http://reddit.com/r/vim/))
@@ -17,5 +17,5 @@ and optionally `.gvimrc` so that Vim will load them. Next, start Vim (which
 will download vim-plug to the `.vim/autoload` folder) and run `:PlugInstall`
 so that vim-plug will download the plugins to the `.vim/plugged` folder.
 Remember to periodically run `:PlugUpdate` in Vim to make sure the plugins are
-up to date and to load new plugins if available. Also periodically run
+up to date and to download new plugins if available. Also periodically run
 `:PlugClean` to remove downloaded plugins that are no longer being loaded.
