@@ -26,6 +26,20 @@ function! HumanSize(bytes) abort "{{{
     endif
 endfunction "}}}
 
+"prints ruler-style line information
+function! Lineinfoextended() abort "{{{
+    "get bytecount column
+    let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
+
+    "append virtual column if different
+    if col('.') != virtcol('.') || getline('.') ==? ''
+        let l:col = l:col . printf('-%d', virtcol('.'))
+    endif
+
+    "return string
+    return printf('%d:%s', line('.'), l:col)
+endfunction "}}}
+
 "hides read-only marker in help files
 function! LightlineReadonly() abort "{{{
     return &readonly && &filetype !=# 'help' ? 'RO' : ''
@@ -81,17 +95,13 @@ endfunction "}}}
 
 "display lineinfoextended when not using a plugin
 function! LightlineLineinfoextended() abort "{{{
-    let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
-    if col('.') != virtcol('.') || getline('.') ==? ''
-        let l:col = l:col . printf('-%d', virtcol('.'))
-    endif
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
-          \ printf('%d:%s', line('.'), l:col)
+          \ Lineinfoextended()
 endfunction "}}}
 
 "display fileformat when not using a plugin
