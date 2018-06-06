@@ -60,6 +60,9 @@ Plug 'esalter-va/vim-checklist'
 "load vim-commentary
 Plug 'tpope/vim-commentary'
 
+"load vim-characterize
+Plug 'tpope/vim-characterize'
+
 "update runtime path and init vim-plug
 call plug#end()
 
