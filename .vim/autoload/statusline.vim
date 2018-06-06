@@ -28,15 +28,15 @@ endfunction "}}}
 
 "prints ruler-style line information
 function! Lineinfoextended() abort "{{{
-    "get bytecount column
+    "get byte index
     let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
 
-    "append virtual column if different
+    "append screen column if different
     if col('.') != virtcol('.') || getline('.') ==? ''
         let l:col = l:col . printf('-%d', virtcol('.'))
     endif
 
-    "return string
+    "return assembled line information as a string
     return printf('%d:%s', line('.'), l:col)
 endfunction "}}}
 
