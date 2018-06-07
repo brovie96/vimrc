@@ -1,2 +1,4 @@
+#ignore plug.vim downloaded through cURL and plug.vim.old created by plug
+#itself when upgrading plug
 plug.vim
 plug.vim.old
