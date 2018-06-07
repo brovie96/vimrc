@@ -63,6 +63,9 @@ Plug 'tpope/vim-commentary'
 "load vim-characterize
 Plug 'tpope/vim-characterize'
 
+"load gitignore.vim
+Plug 'rdolgushin/gitignore.vim'
+
 "update runtime path and init vim-plug
 call plug#end()
 
