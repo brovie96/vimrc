@@ -66,7 +66,7 @@ function! LightlineFilepath() abort "{{{
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
-          \ expand('%:p') !=# '' ? fnamemodify(expand('%:p'), ':~') :
+          \ expand('%:p') !=# '' ? fnamemodify(expand('%:p'), ':~') ==# '~/' ? '~' : fnamemodify(expand('%:p'), ':~') :
           \ '[No Name]'
 endfunction "}}}
 
