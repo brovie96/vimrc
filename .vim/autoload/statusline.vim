@@ -40,9 +40,9 @@ function! Lineinfoextended() abort "{{{
     return printf('%d:%s', line('.'), l:col)
 endfunction "}}}
 
-"hides read-only marker in help files and when using vimfiler
+"hides read-only marker in help files and when using netrw
 function! LightlineReadonly() abort "{{{
-    return &readonly && &filetype !=# 'help' && &filetype !=# 'vimfiler' ? 'RO' : ''
+    return &readonly && &filetype !=# 'help' && &filetype !=# 'netrw' ? 'RO' : ''
 endfunction "}}}
 
 "display plugin name at mode, when applicable
@@ -52,6 +52,7 @@ function! LightlineMode() abort "{{{
           \ &filetype ==# 'unite' ? 'Unite' :
           \ &filetype ==# 'vimfiler' ? 'VimFiler' :
           \ &filetype ==# 'vimshell' ? 'VimShell' :
+          \ &filetype ==# 'netrw' ? 'Netrw' :
           \ expand('%') ==# '[Plugins]' ? 'Plugins' :
           \ &filetype ==# 'help' ? 'Help' :
           \ lightline#mode()
@@ -76,6 +77,7 @@ function! LightlineModified() abort "{{{
           \ &filetype ==# 'unite' ? '' :
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'netrw' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &modified ? ',+' :
           \ !&modifiable ? ',-' :
@@ -89,6 +91,7 @@ function! LightlineHumansize() abort "{{{
           \ &filetype ==# 'unite' ? '' :
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'netrw' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ HumanSize(line2byte(line('$')+1)-1)
 endfunction "}}}
@@ -111,6 +114,7 @@ function! LightlineFileformat() abort "{{{
           \ &filetype ==# 'unite' ? '' :
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'netrw' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &fileformat
 endfunction "}}}
@@ -122,6 +126,7 @@ function! LightlineFileencoding() abort "{{{
           \ &filetype ==# 'unite' ? '' :
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'netrw' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &fileencoding !=# '' ? &fileencoding : &encoding
 endfunction "}}}
@@ -133,6 +138,7 @@ function! LightlineFiletype() abort "{{{
           \ &filetype ==# 'unite' ? '' :
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'netrw' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &filetype !=# '' ? &filetype : 'no ft'
 endfunction "}}}
