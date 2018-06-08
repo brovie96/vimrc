@@ -66,6 +66,9 @@ Plug 'tpope/vim-characterize'
 "load gitignore.vim
 Plug 'rdolgushin/gitignore.vim'
 
+"load vimfiler.vim (depends on unite.vim)
+Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler.vim'
+
 "update runtime path and init vim-plug
 call plug#end()
 
@@ -85,3 +88,6 @@ nnoremap <silent> <leader>ut :UndotreeToggle<cr>
 
 "set up mapping for vim-checklist
 nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
+
+"make vimfiler the default directory explorer
+let g:vimfiler_as_default_explorer = 1

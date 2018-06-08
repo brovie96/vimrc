@@ -40,9 +40,9 @@ function! Lineinfoextended() abort "{{{
     return printf('%d:%s', line('.'), l:col)
 endfunction "}}}
 
-"hides read-only marker in help files
+"hides read-only marker in help files and when using vimfiler
 function! LightlineReadonly() abort "{{{
-    return &readonly && &filetype !=# 'help' ? 'RO' : ''
+    return &readonly && &filetype !=# 'help' && &filetype !=# 'vimfiler' ? 'RO' : ''
 endfunction "}}}
 
 "display plugin name at mode, when applicable
