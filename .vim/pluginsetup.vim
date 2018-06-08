@@ -66,8 +66,8 @@ Plug 'tpope/vim-characterize'
 "load gitignore.vim
 Plug 'rdolgushin/gitignore.vim'
 
-"load vim-vinegar
-Plug 'tpope/vim-vinegar'
+"load vim-dirvish
+Plug 'justinmk/vim-dirvish'
 
 "update runtime path and init vim-plug
 call plug#end()
