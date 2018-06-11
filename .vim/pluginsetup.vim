@@ -88,3 +88,9 @@ nnoremap <silent> <leader>ut :UndotreeToggle<cr>
 
 "set up mapping for vim-checklist
 nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
+
+"override netrw commands with vim-dirvish
+let g:loaded_netrwPlugin = 1
+command! -nargs=? -complete=dir Explore Dirvish <args>
+command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
+command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
