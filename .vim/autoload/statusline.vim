@@ -1,7 +1,7 @@
 "set encoding since multibyte chars are used
 scriptencoding utf-8
 
-"statusline functions
+"statusline functions {{{
 
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline
 "(updates with typing as well)
@@ -143,9 +143,10 @@ function! LightlineFiletype() abort "{{{
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &filetype !=# '' ? &filetype : 'no ft'
 endfunction "}}}
+"}}}
 
-"function to configure statusline
-function! statusline#configurestatusline() abort "{{{
+"function to configure statusline {{{
+function! statusline#configurestatusline() abort
     "configure lightline
     let g:lightline = {
         \ 'colorscheme': 'powerline',
