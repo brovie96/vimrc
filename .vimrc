@@ -58,6 +58,12 @@ set nowrap
 "make horizontal scrolling not jump so much
 set sidescroll=20
 
+"highlight current line number for current window
+augroup CursorlineSetup
+    autocmd WinLeave * set nocursorline
+    autocmd WinEnter,VimEnter * set cursorline
+augroup END
+
 "map <leader><Tab> and <leader><S-Tab> to switch tabs
 nnoremap <silent> <leader><Tab> :tabnext<cr>
 nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
