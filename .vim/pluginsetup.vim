@@ -1,6 +1,7 @@
 "make sure vim-plug is installed
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 "start configuring vim-plug
@@ -37,7 +38,8 @@ Plug 'jwalton512/vim-blade'
 Plug 'chr4/nginx.vim'
 
 "load vim-eunuch
-Plug 'tpope/vim-eunuch', { 'on': [ 'Delete', 'Remove', 'Unlink', 'Move', 'Rename', 'Chmod', 'Mkdir', 'Find', 'Locate', 'SudoEdit', 'SudoWrite', 'Wall', 'W' ] }
+Plug 'tpope/vim-eunuch', { 'on': [ 'Delete', 'Remove', 'Unlink', 'Move', 'Rename',
+            \'Chmod', 'Mkdir', 'Find', 'Locate', 'SudoEdit', 'SudoWrite', 'Wall', 'W' ] }
 
 "load VimCompletesMe
 Plug 'ajh17/VimCompletesMe'
