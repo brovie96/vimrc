@@ -39,7 +39,7 @@ Plug 'chr4/nginx.vim'
 
 "load vim-eunuch
 Plug 'tpope/vim-eunuch', { 'on': [ 'Delete', 'Remove', 'Unlink', 'Move', 'Rename',
-            \'Chmod', 'Mkdir', 'Find', 'Locate', 'SudoEdit', 'SudoWrite', 'Wall', 'W' ] }
+            \ 'Chmod', 'Mkdir', 'Find', 'Locate', 'SudoEdit', 'SudoWrite', 'Wall', 'W' ] }
 
 "load VimCompletesMe
 Plug 'ajh17/VimCompletesMe'
