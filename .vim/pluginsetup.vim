@@ -11,7 +11,7 @@ call plug#begin($HOME . '/.vim/plugged')
 Plug 'tpope/vim-surround'
 
 "load undotree
-Plug 'mbbill/undotree', { 'on': ['UndotreeFocus', 'UndotreeHide', 'UndotreeShow', 'UndotreeToggle'] }
+Plug 'mbbill/undotree'
 
 "load startuptime.vim
 Plug 'tweekmonster/startuptime.vim'
@@ -38,8 +38,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'chr4/nginx.vim'
 
 "load vim-eunuch
-Plug 'tpope/vim-eunuch', { 'on': [ 'Delete', 'Remove', 'Unlink', 'Move', 'Rename',
-            \ 'Chmod', 'Mkdir', 'Find', 'Locate', 'SudoEdit', 'SudoWrite', 'Wall', 'W' ] }
+Plug 'tpope/vim-eunuch'
 
 "load VimCompletesMe
 Plug 'ajh17/VimCompletesMe'
