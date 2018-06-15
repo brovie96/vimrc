@@ -53,6 +53,8 @@ function! LightlineMode() abort "{{{
           \ &filetype ==# 'vimfiler' ? 'VimFiler' :
           \ &filetype ==# 'vimshell' ? 'VimShell' :
           \ &filetype ==# 'dirvish' ? 'Dirvish' :
+          \ &filetype ==# 'undotree' ? 'Undotree' :
+          \ $filetype ==# 'diff' ? 'Diff' :
           \ expand('%') ==# '[Plugins]' ? 'Plugins' :
           \ &filetype ==# 'help' ? 'Help' :
           \ lightline#mode()
@@ -65,6 +67,8 @@ function! LightlineFilepath() abort "{{{
           \ &filetype ==# 'unite' ? '' :
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
+          \ &filetype ==# 'undotree' ? '' :
+          \ &filetype ==# 'diff' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ expand('%:p') !=# '' ?
           \ fnamemodify(expand('%:p'), ':~') ==# '~/' ? '~' : fnamemodify(expand('%:p'), ':~') :
@@ -79,6 +83,8 @@ function! LightlineModified() abort "{{{
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
+          \ &filetype ==# 'undotree' ? '' :
+          \ &filetype ==# 'diff' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &modified ? ',+' :
           \ !&modifiable ? ',-' :
@@ -93,6 +99,8 @@ function! LightlineHumansize() abort "{{{
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
+          \ &filetype ==# 'undotree' ? '' :
+          \ &filetype ==# 'diff' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ HumanSize(line2byte(line('$')+1)-1)
 endfunction "}}}
@@ -117,6 +125,8 @@ function! LightlineFileformat() abort "{{{
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
+          \ &filetype ==# 'undotree' ? '' :
+          \ &filetype ==# 'diff' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &fileformat
 endfunction "}}}
@@ -129,6 +139,8 @@ function! LightlineFileencoding() abort "{{{
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
+          \ &filetype ==# 'undotree' ? '' :
+          \ &filetype ==# 'diff' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &fileencoding !=# '' ? &fileencoding : &encoding
 endfunction "}}}
@@ -141,8 +153,26 @@ function! LightlineFiletype() abort "{{{
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
+          \ &filetype ==# 'undotree' ? '' :
+          \ &filetype ==# 'diff' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &filetype !=# '' ? &filetype : 'no ft'
+endfunction "}}}
+
+"display either filename or plugin name, depending on whether a plugin is
+"being used (for inactive statusline)
+function! LightlineInactiveFirst() abort "{{{
+    return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
+          \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
+          \ &filetype ==# 'unite' ? 'Unite' :
+          \ &filetype ==# 'vimfiler' ? 'VimFiler' :
+          \ &filetype ==# 'vimshell' ? 'VimShell' :
+          \ &filetype ==# 'dirvish' ? 'Dirvish' :
+          \ &filetype ==# 'undotree' ? 'Undotree' :
+          \ &filetype ==# 'diff' ? 'Diff' :
+          \ expand('%') ==# '[Plugins]' ? 'Plugins' :
+          \ &filetype ==# 'help' ? 'Help' :
+          \ expand('%:t')
 endfunction "}}}
 "}}}
 
@@ -159,6 +189,11 @@ function! statusline#configurestatusline() abort
         \              [ 'rulerpercent' ],
         \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
         \ },
+        \ 'inactive': {
+        \   'left':  [ [ 'inactivefirst' ] ],
+        \   'right': [ [ 'lineinfoextended' ],
+        \            [ 'rulerpercent' ] ]
+        \ },
         \ 'component_function': {
         \   'mode': 'LightlineMode',
         \   'readonly': 'LightlineReadonly',
@@ -168,7 +203,8 @@ function! statusline#configurestatusline() abort
         \   'lineinfoextended': 'LightlineLineinfoextended',
         \   'fileformat': 'LightlineFileformat',
         \   'fileencoding': 'LightlineFileencoding',
-        \   'filetype': 'LightlineFiletype'
+        \   'filetype': 'LightlineFiletype',
+        \   'inactivefirst': 'LightlineInactiveFirst'
         \ },
         \ 'component': {
         \   'rulerpercent': '%P'
