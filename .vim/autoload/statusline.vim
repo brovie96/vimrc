@@ -105,18 +105,6 @@ function! LightlineHumansize() abort "{{{
           \ HumanSize(line2byte(line('$')+1)-1)
 endfunction "}}}
 
-"display lineinfoextended when not using a plugin
-function! LightlineLineinfoExtended() abort "{{{
-    return expand('%:t') ==# '__Tagbar__' ? '':
-          \ expand('%:t') ==# 'ControlP' ? '' :
-          \ &filetype ==# 'unite' ? '' :
-          \ &filetype ==# 'vimfiler' ? '' :
-          \ &filetype ==# 'vimshell' ? '' :
-          \ &filetype ==# 'dirvish' ? '' :
-          \ expand('%') ==# '[Plugins]' ? '' :
-          \ LineinfoExtended()
-endfunction "}}}
-
 "display fileformat when not using a plugin
 function! LightlineFileformat() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
@@ -200,7 +188,7 @@ function! statusline#configurestatusline() abort
         \   'filepath': 'LightlineFilepath',
         \   'modified': 'LightlineModified',
         \   'humansize': 'LightlineHumansize',
-        \   'lineinfoextended': 'LightlineLineinfoExtended',
+        \   'lineinfoextended': 'LineinfoExtended',
         \   'fileformat': 'LightlineFileformat',
         \   'fileencoding': 'LightlineFileencoding',
         \   'filetype': 'LightlineFiletype',
