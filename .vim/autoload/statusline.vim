@@ -27,7 +27,7 @@ function! HumanSize(bytes) abort "{{{
 endfunction "}}}
 
 "prints ruler-style line information
-function! Lineinfoextended() abort "{{{
+function! LineinfoExtended() abort "{{{
     "get byte index
     let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
 
@@ -106,7 +106,7 @@ function! LightlineHumansize() abort "{{{
 endfunction "}}}
 
 "display lineinfoextended when not using a plugin
-function! LightlineLineinfoextended() abort "{{{
+function! LightlineLineinfoExtended() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -114,7 +114,7 @@ function! LightlineLineinfoextended() abort "{{{
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
-          \ Lineinfoextended()
+          \ LineinfoExtended()
 endfunction "}}}
 
 "display fileformat when not using a plugin
@@ -200,7 +200,7 @@ function! statusline#configurestatusline() abort
         \   'filepath': 'LightlineFilepath',
         \   'modified': 'LightlineModified',
         \   'humansize': 'LightlineHumansize',
-        \   'lineinfoextended': 'LightlineLineinfoextended',
+        \   'lineinfoextended': 'LightlineLineinfoExtended',
         \   'fileformat': 'LightlineFileformat',
         \   'fileencoding': 'LightlineFileencoding',
         \   'filetype': 'LightlineFiletype',
