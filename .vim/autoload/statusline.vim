@@ -54,7 +54,7 @@ function! LightlineMode() abort "{{{
           \ &filetype ==# 'vimshell' ? 'VimShell' :
           \ &filetype ==# 'dirvish' ? 'Dirvish' :
           \ &filetype ==# 'undotree' ? 'Undotree' :
-          \ $filetype ==# 'diff' ? 'Diff' :
+          \ expand('%') =~# '^diffpanel_.*'  ? 'Diff' :
           \ expand('%') ==# '[Plugins]' ? 'Plugins' :
           \ &filetype ==# 'help' ? 'Help' :
           \ lightline#mode()
@@ -68,7 +68,7 @@ function! LightlineFilepath() abort "{{{
           \ &filetype ==# 'vimfiler' ? '' :
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'undotree' ? '' :
-          \ &filetype ==# 'diff' ? '' :
+          \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ expand('%:p') !=# '' ?
           \ fnamemodify(expand('%:p'), ':~') ==# '~/' ? '~' : fnamemodify(expand('%:p'), ':~') :
@@ -84,7 +84,7 @@ function! LightlineModified() abort "{{{
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ &filetype ==# 'undotree' ? '' :
-          \ &filetype ==# 'diff' ? '' :
+          \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &modified ? ',+' :
           \ !&modifiable ? ',-' :
@@ -100,7 +100,7 @@ function! LightlineHumansize() abort "{{{
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ &filetype ==# 'undotree' ? '' :
-          \ &filetype ==# 'diff' ? '' :
+          \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ HumanSize(line2byte(line('$')+1)-1)
 endfunction "}}}
@@ -126,7 +126,7 @@ function! LightlineFileformat() abort "{{{
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ &filetype ==# 'undotree' ? '' :
-          \ &filetype ==# 'diff' ? '' :
+          \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &fileformat
 endfunction "}}}
@@ -140,7 +140,7 @@ function! LightlineFileencoding() abort "{{{
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ &filetype ==# 'undotree' ? '' :
-          \ &filetype ==# 'diff' ? '' :
+          \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &fileencoding !=# '' ? &fileencoding : &encoding
 endfunction "}}}
@@ -154,7 +154,7 @@ function! LightlineFiletype() abort "{{{
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ &filetype ==# 'undotree' ? '' :
-          \ &filetype ==# 'diff' ? '' :
+          \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &filetype !=# '' ? &filetype : 'no ft'
 endfunction "}}}
@@ -169,7 +169,7 @@ function! LightlineInactiveFirst() abort "{{{
           \ &filetype ==# 'vimshell' ? 'VimShell' :
           \ &filetype ==# 'dirvish' ? 'Dirvish' :
           \ &filetype ==# 'undotree' ? 'Undotree' :
-          \ &filetype ==# 'diff' ? 'Diff' :
+          \ expand('%') =~# '^diffpanel_.*' ? 'Diff' :
           \ expand('%') ==# '[Plugins]' ? 'Plugins' :
           \ &filetype ==# 'help' ? 'Help' :
           \ expand('%:t')
