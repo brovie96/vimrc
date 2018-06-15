@@ -192,7 +192,7 @@ function! statusline#configurestatusline() abort
         \ 'inactive': {
         \   'left':  [ [ 'inactivefirst' ] ],
         \   'right': [ [ 'lineinfoextended' ],
-        \            [ 'rulerpercent' ] ]
+        \              [ 'rulerpercent' ] ]
         \ },
         \ 'component_function': {
         \   'mode': 'LightlineMode',
