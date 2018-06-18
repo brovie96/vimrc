@@ -5,7 +5,7 @@ scriptencoding utf-8
 
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline
 "(updates with typing as well)
-function! HumanSize(bytes) abort "{{{
+function! statusline#HumanSize(bytes) abort "{{{
     if a:bytes < 0
         return '0 B'
     endif
@@ -27,7 +27,7 @@ function! HumanSize(bytes) abort "{{{
 endfunction "}}}
 
 "prints ruler-style line information
-function! LineinfoExtended() abort "{{{
+function! statusline#LineinfoExtended() abort "{{{
     "get byte index
     let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
 
@@ -41,12 +41,12 @@ function! LineinfoExtended() abort "{{{
 endfunction "}}}
 
 "hides read-only marker in help files and when using dirvish
-function! LightlineReadonly() abort "{{{
+function! statusline#LightlineReadonly() abort "{{{
     return &readonly && &filetype !=# 'help' && &filetype !=# 'dirvish' ? 'RO' : ''
 endfunction "}}}
 
 "display plugin name at mode, when applicable
-function! LightlineMode() abort "{{{
+function! statusline#LightlineMode() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
           \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
           \ &filetype ==# 'unite' ? 'Unite' :
@@ -61,7 +61,7 @@ function! LightlineMode() abort "{{{
 endfunction "}}}
 
 "display filepath when not using a plugin
-function! LightlineFilepath() abort "{{{
+function! statusline#LightlineFilepath() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -76,7 +76,7 @@ function! LightlineFilepath() abort "{{{
 endfunction "}}}
 
 "display modified when not using a plugin
-function! LightlineModified() abort "{{{
+function! statusline#LightlineModified() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -92,7 +92,7 @@ function! LightlineModified() abort "{{{
 endfunction "}}}
 
 "display humansize when not using a plugin
-function! LightlineHumansize() abort "{{{
+function! statusline#LightlineHumanSize() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -102,11 +102,11 @@ function! LightlineHumansize() abort "{{{
           \ &filetype ==# 'undotree' ? '' :
           \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
-          \ HumanSize(line2byte(line('$')+1)-1)
+          \ statusline#HumanSize(line2byte(line('$')+1)-1)
 endfunction "}}}
 
 "display fileformat when not using a plugin
-function! LightlineFileformat() abort "{{{
+function! statusline#LightlineFileformat() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -120,7 +120,7 @@ function! LightlineFileformat() abort "{{{
 endfunction "}}}
 
 "display fileencoding when not using a plugin
-function! LightlineFileencoding() abort "{{{
+function! statusline#LightlineFileencoding() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -134,7 +134,7 @@ function! LightlineFileencoding() abort "{{{
 endfunction "}}}
 
 "display filetype when not using a plugin
-function! LightlineFiletype() abort "{{{
+function! statusline#LightlineFiletype() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -149,7 +149,7 @@ endfunction "}}}
 
 "display either filename or plugin name, depending on whether a plugin is
 "being used (for inactive statusline)
-function! LightlineInactiveFirst() abort "{{{
+function! statusline#LightlineInactiveFirst() abort "{{{
     return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
           \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
           \ &filetype ==# 'unite' ? 'Unite' :
@@ -183,16 +183,16 @@ function! statusline#configurestatusline() abort
         \              [ 'rulerpercent' ] ]
         \ },
         \ 'component_function': {
-        \   'mode': 'LightlineMode',
-        \   'readonly': 'LightlineReadonly',
-        \   'filepath': 'LightlineFilepath',
-        \   'modified': 'LightlineModified',
-        \   'humansize': 'LightlineHumansize',
-        \   'lineinfoextended': 'LineinfoExtended',
-        \   'fileformat': 'LightlineFileformat',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'filetype': 'LightlineFiletype',
-        \   'inactivefirst': 'LightlineInactiveFirst'
+        \   'mode': 'statusline#LightlineMode',
+        \   'readonly': 'statusline#LightlineReadonly',
+        \   'filepath': 'statusline#LightlineFilepath',
+        \   'modified': 'statusline#LightlineModified',
+        \   'humansize': 'statusline#LightlineHumanSize',
+        \   'lineinfoextended': 'statusline#LineinfoExtended',
+        \   'fileformat': 'statusline#LightlineFileformat',
+        \   'fileencoding': 'statusline#LightlineFileencoding',
+        \   'filetype': 'statusline#LightlineFiletype',
+        \   'inactivefirst': 'statusline#LightlineInactiveFirst'
         \ },
         \ 'component': {
         \   'rulerpercent': '%P'
