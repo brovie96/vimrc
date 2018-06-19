@@ -12,13 +12,10 @@ Make sure you are on a Unix-equivalent OS and have a version of Vim that is
 compatible with [vim-plug](https://github.com/junegunn/vim-plug/) (7.0 or
 newer, 8.0 recommended), since it is used in order to load [various
 plugins](https://github.com/brovie96/vimrc/blob/master/.vim/pluginsetup.vim/).
-Also make sure you are using a font patched with
-[nerd-fonts](https://github.com/ryanoasis/nerd-fonts) so that the characters
-used in the statusline are displayed properly. After cloning the repository,
-make symlinks to the `.vim` folder, `.vimrc`, and optionally `.gvimrc` so that
-Vim will load them. Next, start Vim (which will download vim-plug to the
-`.vim/autoload` folder) and run `:PlugInstall` so that vim-plug will download
-the plugins to the `.vim/plugged` folder. Remember to periodically run
-`:PlugUpdate` in Vim to make sure the plugins are up to date and to download
-new plugins if available. Also periodically run `:PlugClean` to remove
-downloaded plugins that are no longer being loaded.
+After cloning the repository, make symlinks to the `.vim` folder, `.vimrc`,
+and optionally `.gvimrc` so that Vim will load them. Next, start Vim (which
+will download vim-plug to the `.vim/autoload` folder) and run `:PlugInstall`
+so that vim-plug will download the plugins to the `.vim/plugged` folder.
+Remember to periodically run `:PlugUpdate` in Vim to make sure the plugins are
+up to date and to download new plugins if available. Also periodically run
+`:PlugClean` to remove downloaded plugins that are no longer being loaded.
