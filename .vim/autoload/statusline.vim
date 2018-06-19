@@ -214,7 +214,7 @@ function! statusline#configurestatusline() abort
         \   'right': '░▒▓'
         \ },
         \ 'subseparator': {
-        \   'left': '▒',
+        \   'left': '░',
         \   'right': '░'
         \ }
         \ }
