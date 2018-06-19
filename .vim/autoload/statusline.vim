@@ -42,7 +42,7 @@ endfunction "}}}
 
 "hides read-only marker in help files and when using dirvish
 function! statusline#LightlineReadonly() abort "{{{
-    return &readonly && &filetype !=# 'help' && &filetype !=# 'dirvish' ? '⭤' : ''
+    return &readonly && &filetype !=# 'help' && &filetype !=# 'dirvish' ? 'RO' : ''
 endfunction "}}}
 
 "display plugin name at mode, when applicable
@@ -210,12 +210,12 @@ function! statusline#configurestatusline() abort
         \   'linter_ok': 'left',
         \ },
         \ 'separator': {
-        \   'left': '⮀',
-        \   'right': '⮂'
+        \   'left': '▓▒░',
+        \   'right': '░▒▓'
         \ },
         \ 'subseparator': {
-        \   'left': '⮁',
-        \   'right': '⮃'
+        \   'left': '▒',
+        \   'right': '░'
         \ }
         \ }
 endfunction "}}}
