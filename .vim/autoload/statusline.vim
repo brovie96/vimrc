@@ -1,6 +1,3 @@
-"set encoding since multibyte chars are used
-scriptencoding utf-8
-
 "statusline functions {{{
 
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline
