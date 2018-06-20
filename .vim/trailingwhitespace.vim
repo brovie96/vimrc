@@ -1,5 +1,5 @@
-"set trailing whitespace to highlight in the error color
-highlight link TrailingWhitespace Error
+"set trailing whitespace to highlight in the errormsg color
+highlight link TrailingWhitespace ErrorMsg
 
 "autocmd to enable highlighting on window enter
 augroup MatchTrailingWhitespace
