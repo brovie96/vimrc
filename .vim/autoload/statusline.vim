@@ -71,6 +71,7 @@ function! statusline#LightlineFilepath() abort "{{{
           \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ expand('%:p') !=# '' ?
+          \ winwidth(0) <= 70 ? expand('%:t') :
           \ fnamemodify(expand('%:p'), ':~') ==# '~/' ? '~' : fnamemodify(expand('%:p'), ':~') :
           \ '[No Name]'
 endfunction "}}}
@@ -116,6 +117,7 @@ function! statusline#LightlineFileformat() abort "{{{
           \ &filetype ==# 'undotree' ? '' :
           \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
+          \ winwidth(0) <= 70 ? '' :
           \ &fileformat
 endfunction "}}}
 
@@ -144,6 +146,7 @@ function! statusline#LightlineFiletype() abort "{{{
           \ &filetype ==# 'undotree' ? '' :
           \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
+          \ winwidth(0) <= 70 ? '' :
           \ &filetype !=# '' ? &filetype : 'no ft'
 endfunction "}}}
 
@@ -209,14 +212,6 @@ function! statusline#configurestatusline() abort
         \   'linter_errors': 'error',
         \   'linter_ok': 'left',
         \ },
-        \ 'separator': {
-        \   'left': '▓▒░',
-        \   'right': '░▒▓'
-        \ },
-        \ 'subseparator': {
-        \   'left': '░',
-        \   'right': '░'
-        \ }
         \ }
 endfunction "}}}
 
