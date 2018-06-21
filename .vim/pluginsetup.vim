@@ -49,7 +49,7 @@ Plug 'w0rp/ale'
 "load lightline.vim
 Plug 'itchyny/lightline.vim'
 
-"load lightline-ale
+"load lightline-ale (depends on ale and lightline.vim)
 Plug 'maximbaz/lightline-ale'
 
 "load hexmode
