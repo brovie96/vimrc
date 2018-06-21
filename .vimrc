@@ -8,8 +8,9 @@ set laststatus=2
 "don't show mode, since lightline will show it already
 set noshowmode
 
-"set ttimeoutlen to make mode display in lightline update faster
-set ttimeoutlen=0
+"set ttimeout and ttimeoutlen to make mode display in lightline update faster
+set ttimeout
+set ttimeoutlen=50
 
 "use soft tabs of 4 spaces
 set expandtab
