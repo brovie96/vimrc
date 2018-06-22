@@ -10,7 +10,7 @@ want to use mine, here's how to set it up.
 
 Make sure you are on a Unix-equivalent OS (including any version of Linux,
 even when run in
-[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and have a
+[WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)) and have a
 version of Vim that is compatible with
 [vim-plug](https://github.com/junegunn/vim-plug/) (7.0 or newer, 8.0
 recommended), since it is used in order to load [various
