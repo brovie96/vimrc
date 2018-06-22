@@ -7,7 +7,7 @@ UI a bit prettier.
 Most online sources (including [the Vim subreddit][Vim sub]) strongly
 discourage using someone else's Vim configuration, but if you really want to
 use mine, here's how to set it up.
-
+------------------------------------------------------------------------------
 Make sure you are on a Unix-equivalent OS (including any version of Linux, even
 when run in [WSL][WSL]) and have a version of Vim that is compatible with
 [vim-plug][vim-plug] (7.0 or newer, 8.0 recommended), since it is used in order
