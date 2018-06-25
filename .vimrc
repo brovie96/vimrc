@@ -50,6 +50,9 @@ set autoindent
 "turn on line numbers
 set number
 
+"set default sql type to mysql
+let g:sql_type_default='mysql'
+
 "change highlighting for line numbers
 highlight LineNr term=bold cterm=bold ctermfg=darkcyan
 
