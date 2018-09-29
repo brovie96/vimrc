@@ -82,6 +82,7 @@ function! statusline#LightlineModified() abort "{{{
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ &filetype ==# 'undotree' ? '' :
+          \ &filetype ==# 'help' ? '' :
           \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &modified ? ',+' :
