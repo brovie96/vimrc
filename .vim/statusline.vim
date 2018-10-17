@@ -41,4 +41,4 @@ let g:lightline = {
     \   'linter_errors': 'error',
     \   'linter_ok': 'left'
     \ }
-    \ }
+\ }
