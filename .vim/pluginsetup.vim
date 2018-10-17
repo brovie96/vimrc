@@ -73,12 +73,8 @@ Plug 'justinmk/vim-dirvish'
 "update runtime path and init vim-plug
 call plug#end()
 
-"configure statusline using lightline
-runtime statusline.vim
-
-"set up lightline's tabline
-let g:lightline.tabline = { 'left': [ [ 'tabs' ] ], 'right': [ ] }
-let g:lightline.tab = { 'active': [ 'filename', 'modified' ], 'inactive': [ 'filename', 'modified' ] }
+"configure lightline
+runtime lightlinesetup.vim
 
 "set up vim-easy-align commands
 xmap gl <Plug>(EasyAlign)

@@ -42,3 +42,7 @@ let g:lightline = {
     \   'linter_ok': 'left'
     \ }
 \ }
+
+"set up lightline's tabline
+let g:lightline.tabline = { 'left': [ [ 'tabs' ] ], 'right': [ ] }
+let g:lightline.tab = { 'active': [ 'filename', 'modified' ], 'inactive': [ 'filename', 'modified' ] }
