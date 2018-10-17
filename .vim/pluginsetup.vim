@@ -74,7 +74,7 @@ Plug 'justinmk/vim-dirvish'
 call plug#end()
 
 "configure statusline using lightline
-call statusline#configurestatusline()
+runtime statusline.vim
 
 "set up lightline's tabline
 let g:lightline.tabline = { 'left': [ [ 'tabs' ] ], 'right': [ ] }
