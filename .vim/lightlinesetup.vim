@@ -1,4 +1,4 @@
-"configure lightline
+"configure lightline {{{
 let g:lightline = {
     \ 'colorscheme': 'powerline',
     \ 'active': {
@@ -42,7 +42,12 @@ let g:lightline = {
     \   'linter_ok': 'left'
     \ }
 \ }
+"}}}
 
-"set up lightline's tabline
+"set up lightline's tabline {{{
 let g:lightline.tabline = { 'left': [ [ 'tabs' ] ], 'right': [ ] }
 let g:lightline.tab = { 'active': [ 'filename', 'modified' ], 'inactive': [ 'filename', 'modified' ] }
+"}}}
+
+"modeline to turn folds on {{{
+" vi: set fdm=marker: }}}

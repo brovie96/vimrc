@@ -162,5 +162,5 @@ function! statusline#LightlineInactiveFirst() abort "{{{
           \ expand('%:t')
 endfunction "}}}
 
-"modeline to turn folds on
-" vi:fdm=marker
+"modeline to turn folds on {{{
+" vi: set fdm=marker: }}}
