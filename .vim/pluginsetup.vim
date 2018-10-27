@@ -70,6 +70,9 @@ Plug 'rdolgushin/gitignore.vim'
 "load vim-dirvish
 Plug 'justinmk/vim-dirvish'
 
+"load vim-scriptease
+Plug 'tpope/vim-scriptease'
+
 "update runtime path and init vim-plug
 call plug#end()
 
