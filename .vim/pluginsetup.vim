@@ -73,6 +73,9 @@ Plug 'justinmk/vim-dirvish'
 "load vim-scriptease
 Plug 'tpope/vim-scriptease'
 
+"load vim-unimpaired
+Plug 'tpope/vim-unimpaired'
+
 "update runtime path and init vim-plug
 call plug#end()
 
