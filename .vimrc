@@ -72,6 +72,12 @@ set sidescroll=20
 nnoremap <silent> <leader><Tab> :tabnext<cr>
 nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
 
+"enable hidden buffers
+set hidden
+
+"setup speedy buffer switch with <leader>l
+nnoremap <leader>l :ls<CR>:b<space>
+
 "load trailing whitespace stuff
 runtime trailingwhitespace.vim
 
