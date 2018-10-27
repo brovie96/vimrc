@@ -83,6 +83,7 @@ call plug#end()
 runtime lightlinesetup.vim
 
 "set up vim-easy-align commands
+vmap <Enter> <Plug>(EasyAlign)
 xmap gl <Plug>(EasyAlign)
 nmap gl <Plug>(EasyAlign)
 
