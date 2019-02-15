@@ -50,23 +50,23 @@ set autoindent
 "turn on line numbers
 set number
 
-"set default sql type to mysql
-let g:sql_type_default='mysql'
-
 "change highlighting for line numbers
 highlight LineNr term=bold cterm=bold ctermfg=darkcyan
 
+"set default sql type to mysql
+let g:sql_type_default='mysql'
+
 "set a buffer of five lines around the cursor when scrolling vertically
 set scrolloff=5
+
+"make horizontal scrolling not jump so much
+set sidescroll=20
 
 "set left and right movement to move across eols
 set whichwrap+=<,>,h,l,[,]
 
 "keep long lines from wrapping
 set nowrap
-
-"make horizontal scrolling not jump so much
-set sidescroll=20
 
 "map <leader><Tab> and <leader><S-Tab> to switch tabs
 nnoremap <silent> <leader><Tab> :tabnext<cr>
