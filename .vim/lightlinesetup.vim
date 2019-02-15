@@ -15,16 +15,16 @@ let g:lightline = {
     \              [ 'rulerpercent' ] ]
     \ },
     \ 'component_function': {
-    \   'mode': 'statusline#LightlineMode',
-    \   'readonly': 'statusline#LightlineReadonly',
-    \   'filepath': 'statusline#LightlineFilepath',
-    \   'modified': 'statusline#LightlineModified',
-    \   'humansize': 'statusline#LightlineHumanSize',
+    \   'mode': 'statusline#Mode',
+    \   'readonly': 'statusline#Readonly',
+    \   'filepath': 'statusline#Filepath',
+    \   'modified': 'statusline#Modified',
+    \   'humansize': 'statusline#HumanSize',
     \   'lineinfoextended': 'statusline#LineinfoExtended',
-    \   'fileformat': 'statusline#LightlineFileformat',
-    \   'fileencoding': 'statusline#LightlineFileencoding',
-    \   'filetype': 'statusline#LightlineFiletype',
-    \   'inactivefirst': 'statusline#LightlineInactiveFirst'
+    \   'fileformat': 'statusline#FileFormat',
+    \   'fileencoding': 'statusline#FileEncoding',
+    \   'filetype': 'statusline#Filetype',
+    \   'inactivefirst': 'statusline#InactiveFirst'
     \ },
     \ 'component': {
     \   'rulerpercent': '%P'
