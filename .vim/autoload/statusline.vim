@@ -23,12 +23,18 @@ endfunction "}}}
 
 "prints ruler-style line information
 function! statusline#LineinfoExtended() abort "{{{
-    "get byte index
-    let l:col = printf('%d', (getline('.') ==? '' ? 0 : col('.')))
+    "if empty line, print '0-1' that ruler uses
+    if getline('.') ==? ''
+        let l:col = '0-1'
+    else
+        "get byte index
+        let l:col = printf('%d', col('.'))
 
-    "append screen column if different
-    if col('.') != virtcol('.') || getline('.') ==? ''
-        let l:col = l:col . printf('-%d', virtcol('.'))
+        "append screen column if different
+        if col('.') != virtcol('.')
+            let l:col = l:col . printf('-%d', virtcol('.'))
+        endif
+
     endif
 
     "return assembled line information as a string
