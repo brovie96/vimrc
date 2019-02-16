@@ -30,8 +30,8 @@ set smartcase
 "make joined lines have single-spaced sentences
 set nojoinspaces
 
-"show commands in the bottom row (useful for checking normal mode commands as
-"they are typed)
+"show commands in the bottom row
+"(useful for checking normal mode commands as they are typed)
 set showcmd
 
 "make sure terminal is in 256-color mode
@@ -40,8 +40,8 @@ set t_Co=256
 "add a confirmation dialog on :q and others
 set confirm
 
-"make backspace work more normally (backspace over indents, eols, and
-"insertion start point)
+"make backspace work more normally
+"(backspace over indents, eols, and insertion start point)
 set backspace=indent,eol,start
 
 "enable autoindent
