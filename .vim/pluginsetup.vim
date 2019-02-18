@@ -110,6 +110,8 @@ Plug 'tpope/vim-unimpaired'
 call plug#end()
 "}}}
 
+"set up mappings/commands {{{
+
 "set up vim-easy-align commands {{{
 vmap <Enter> <Plug>(EasyAlign)
 xmap gl <Plug>(EasyAlign)
@@ -129,6 +131,8 @@ let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+"}}}
+
 "}}}
 
 "configure lightline {{{
