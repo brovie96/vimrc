@@ -224,4 +224,4 @@ endfunction "}}}
 "}}}
 
 "modeline to turn folds on {{{
-" vi: set fdm=marker: }}}
+" vi: se fdm=marker: }}}
