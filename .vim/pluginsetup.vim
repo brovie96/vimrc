@@ -7,7 +7,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
                     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     else
-        !echo 'CURL IS NOT INSTALLED ON YOUT SYSTEM. PLEASE INSTALL CURL AND RELAUNCH VIM.'
+        silent !echo 'CURL IS NOT INSTALLED ON YOUR SYSTEM. PLEASE INSTALL CURL AND RELAUNCH VIM.'
         qall!
     endif
 
