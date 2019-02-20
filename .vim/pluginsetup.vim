@@ -1,7 +1,17 @@
 "make sure vim-plug is installed {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    "see if curl is installed
+    let b:curl = system('which curl')
+
+    if b:curl !=# ''
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    else
+        !echo 'CURL IS NOT INSTALLED ON YOUT SYSTEM. PLEASE INSTALL CURL AND RELAUNCH VIM.'
+        qall!
+    endif
+
+    unlet b:curl
 endif
 "}}}
 
