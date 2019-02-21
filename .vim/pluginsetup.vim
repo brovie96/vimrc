@@ -1,6 +1,6 @@
 "make sure vim-plug is installed {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
-    "see if curl is installed
+    "make sure curl is installed
     let b:curl = system('which curl')
 
     if b:curl !=# ''
