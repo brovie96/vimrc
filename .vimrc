@@ -1,4 +1,5 @@
-"set nocompatible explicitly to make sure tweekmonster/startuptime.vim doesn't have weird issues {{{
+"set nocompatible explicitly {{{
+"(to make sure tweekmonster/startuptime.vim doesn't have weird issues)
 set nocompatible
 "}}}
 
