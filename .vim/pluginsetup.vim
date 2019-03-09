@@ -7,8 +7,24 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
                     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     else
-        silent !echo 'CURL IS NOT INSTALLED ON YOUR SYSTEM. PLEASE INSTALL CURL AND RELAUNCH VIM.'
-        qall!
+        "try wget (need to create folder separately)
+        let b:wget = system('which wget')
+
+        if b:wget !=# ''
+            if empty(glob('~/.vim/autoload/'))
+                silent !mkdir -p ~/.vim/autoload/
+            endif
+
+            silent !wget -O ~/.vim/autoload/plug.vim
+                        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        else
+            "neither one is installed (somehow)
+            silent !echo 'NEITHER CURL NOR WGET IS INSTALLED ON YOUR SYSTEM.'
+            silent !echo 'PLEASE INSTALL CURL OR WGET AND RELAUNCH VIM.'
+            qall!
+        endif
+
+        unlet b:wget
     endif
 
     unlet b:curl
