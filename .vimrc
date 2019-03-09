@@ -6,7 +6,7 @@ set nocompatible "}}}
 set laststatus=2 "}}}
 "don't show mode, since lightline will show it already {{{
 set noshowmode "}}}
-"set ttimeout and ttizomeoutlen to make mode display in lightline update faster {{{
+"set ttimeout and ttimeoutlen to make mode display in lightline update faster {{{
 set ttimeout | set ttimeoutlen=50 "}}}
 "}}}
 "formatting stuff {{{
