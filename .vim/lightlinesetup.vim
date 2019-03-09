@@ -41,14 +41,10 @@ let g:lightline = {
     \   'linter_errors': 'error',
     \   'linter_ok': 'left'
     \ }
-\ }
-"}}}
-
+\ } "}}}
 "set up lightline's tabline {{{
 let g:lightline.tabline = { 'left': [ [ 'tabs' ] ], 'right': [ ] }
-let g:lightline.tab = { 'active': [ 'filename', 'modified' ], 'inactive': [ 'filename', 'modified' ] }
-"}}}
-
+let g:lightline.tab = { 'active': [ 'filename', 'modified' ], 'inactive': [ 'filename', 'modified' ] } "}}}
 "functions for lightline configuration {{{
 
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline
@@ -220,8 +216,6 @@ function! LL_InactiveFirst() abort "{{{
           \ &filetype ==# 'help' ? 'Help' :
           \ expand('%:t')
 endfunction "}}}
-
 "}}}
-
 "modeline to turn folds on {{{
 " vi: se fdm=marker: }}}
