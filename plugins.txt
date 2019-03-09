@@ -1,0 +1,27 @@
+Finished. 0 error(s).
+[========================]
+
+- vim-eunuch: OK
+- ale: OK
+- lightline-ale: OK
+- vim-scriptease: OK
+- hexmode: OK
+- startuptime.vim: OK
+- webapi-vim: OK
+- nginx.vim: OK
+- vim-repeat: OK
+- vim-commentary: OK
+- vim-characterize: OK
+- gitignore.vim: OK
+- vim-blade: OK
+- lightline.vim: OK
+- vim-surround: OK
+- VimCompletesMe: OK
+- vim-unimpaired: OK
+- vim-plug: OK
+- gist-vim: OK
+- vim-easy-align: OK
+- undotree: OK
+- vim-speeddating: OK
+- vim-checklist: OK
+- vim-dirvish: OK
