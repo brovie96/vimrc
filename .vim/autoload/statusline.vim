@@ -1,7 +1,6 @@
-"functions {{{
-"adds a size in bytes, with the applicable decimal prefixes, to the statusline
+"adds a size in bytes, with the applicable decimal prefixes, to the statusline {{{
 "(updates with typing as well)
-function! s:HumanSize(bytes) abort "{{{
+function! s:HumanSize(bytes) abort
     if a:bytes < 0
         return '0 B'
     endif
@@ -21,9 +20,8 @@ function! s:HumanSize(bytes) abort "{{{
         return printf('%.0f B', l:bytes)
     endif
 endfunction "}}}
-
-"prints ruler-style line information
-function! statusline#LineinfoExtended() abort "{{{
+"prints ruler-style line information {{{
+function! statusline#LineinfoExtended() abort
     "if empty line, print '0-1' that ruler uses
     if getline('.') ==? ''
         let l:col = '0-1'
@@ -41,14 +39,12 @@ function! statusline#LineinfoExtended() abort "{{{
     "return assembled line information as a string
     return printf('%d:%s', line('.'), l:col)
 endfunction "}}}
-
-"hides read-only marker in help files and when using dirvish
-function! statusline#Readonly() abort "{{{
+"hides read-only marker in help files and when using dirvish {{{
+function! statusline#Readonly() abort
     return &readonly && &filetype !=# 'help' && &filetype !=# 'dirvish' ? 'RO' : ''
 endfunction "}}}
-
-"display plugin name at mode, when applicable
-function! statusline#Mode() abort "{{{
+"display plugin name at mode, when applicable {{{
+function! statusline#Mode() abort
     return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
           \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
           \ &filetype ==# 'unite' ? 'Unite' :
@@ -61,9 +57,8 @@ function! statusline#Mode() abort "{{{
           \ &filetype ==# 'help' ? 'Help' :
           \ lightline#mode()
 endfunction "}}}
-
-"display filepath when not using a plugin
-function! statusline#Filepath() abort "{{{
+"display filepath when not using a plugin {{{
+function! statusline#Filepath() abort
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -77,9 +72,8 @@ function! statusline#Filepath() abort "{{{
           \ fnamemodify(expand('%:p'), ':~') ==# '~/' ? '~' : fnamemodify(expand('%:p'), ':~') :
           \ '[No Name]'
 endfunction "}}}
-
-"display modified when not using a plugin
-function! statusline#Modified() abort "{{{
+"display modified when not using a plugin {{{
+function! statusline#Modified() abort
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -94,9 +88,8 @@ function! statusline#Modified() abort "{{{
           \ !&modifiable ? ',-' :
           \ ''
 endfunction "}}}
-
-"display humansize when not using a plugin
-function! statusline#HumanSize() abort "{{{
+"display humansize when not using a plugin {{{
+function! statusline#HumanSize() abort
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -108,9 +101,8 @@ function! statusline#HumanSize() abort "{{{
           \ expand('%') ==# '[Plugins]' ? '' :
           \ s:HumanSize(line2byte(line('$')+1)-1)
 endfunction "}}}
-
-"display fileformat when not using a plugin
-function! statusline#FileFormat() abort "{{{
+"display fileformat when not using a plugin {{{
+function! statusline#FileFormat() abort
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -123,9 +115,8 @@ function! statusline#FileFormat() abort "{{{
           \ winwidth(0) <= 70 ? '' :
           \ &fileformat
 endfunction "}}}
-
-"display fileencoding when not using a plugin
-function! statusline#FileEncoding() abort "{{{
+"display fileencoding when not using a plugin {{{
+function! statusline#FileEncoding() abort
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -137,9 +128,8 @@ function! statusline#FileEncoding() abort "{{{
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &fileencoding !=# '' ? &fileencoding : &encoding
 endfunction "}}}
-
-"display filetype when not using a plugin
-function! statusline#Filetype() abort "{{{
+"display filetype when not using a plugin {{{
+function! statusline#Filetype() abort
     return expand('%:t') ==# '__Tagbar__' ? '':
           \ expand('%:t') ==# 'ControlP' ? '' :
           \ &filetype ==# 'unite' ? '' :
@@ -152,10 +142,9 @@ function! statusline#Filetype() abort "{{{
           \ winwidth(0) <= 70 ? '' :
           \ &filetype !=# '' ? &filetype : 'no ft'
 endfunction "}}}
-
-"display either filename or plugin name, depending on whether a plugin is
-"being used (for inactive statusline)
-function! statusline#InactiveFirst() abort "{{{
+"display either filename or plugin name, depending on whether a plugin is being used {{{
+"(for inactive statusline)
+function! statusline#InactiveFirst() abort
     return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
           \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
           \ &filetype ==# 'unite' ? 'Unite' :
@@ -168,6 +157,5 @@ function! statusline#InactiveFirst() abort "{{{
           \ &filetype ==# 'help' ? 'Help' :
           \ expand('%:t')
 endfunction "}}}
-"}}}
 "modeline to turn folds on {{{
 " vi: se fdm=marker: }}}
