@@ -7,8 +7,7 @@ function! trailingwhitespace#ClearTrailingWhitespace() abort
         echo 'Working...'
 
         "set loop variables
-        let l:lines = 0
-        let l:linenum = 1
+        let l:lines = 0 | let l:linenum = 1
 
         "loop through each line
         for l:line in getline(1, '$')

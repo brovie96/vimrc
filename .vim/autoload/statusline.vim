@@ -3,9 +3,7 @@
 function! s:HumanSize(bytes) abort
     if a:bytes < 0 | return '0 B' | endif
 
-    let l:bytes = a:bytes
-    let l:sizes = ['KB', 'MB', 'GB']
-    let l:i = -1
+    let l:bytes = a:bytes | let l:sizes = ['KB', 'MB', 'GB'] | let l:i = -1
 
     while l:bytes >= 1000
         let l:bytes = l:bytes / 1000.0
