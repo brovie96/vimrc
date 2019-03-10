@@ -38,7 +38,7 @@ Plug 'tpope/vim-surround' "}}}
 Plug 'mbbill/undotree' "}}}
 "load startuptime.vim {{{
 Plug 'tweekmonster/startuptime.vim' "}}}
-"load gist-vim (depends on webapi-vim) {{{
+"load gist-vim and webapi-vim (gist-vim depends on webapi-vim) {{{
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' "}}}
 "load vim-plug (for help file) {{{
 Plug 'junegunn/vim-plug' "}}}
@@ -79,7 +79,8 @@ Plug 'tpope/vim-scriptease' "}}}
 "load vim-unimpaired {{{
 Plug 'tpope/vim-unimpaired' "}}}
 "}}}
-"update runtime path and init vim-plug {{{ "(plugins are loaded after this function call)
+"update runtime path and init vim-plug {{{
+"(plugins are loaded after this function call)
 call plug#end() "}}}
 "set up mappings/commands {{{
 "set up vim-easy-align commands {{{
