@@ -1,9 +1,7 @@
 "adds a size in bytes, with the applicable decimal prefixes, to the statusline {{{
 "(updates with typing as well)
 function! s:HumanSize(bytes) abort
-    if a:bytes < 0
-        return '0 B'
-    endif
+    if a:bytes < 0 | return '0 B' | endif
 
     let l:bytes = a:bytes
     let l:sizes = ['KB', 'MB', 'GB']
