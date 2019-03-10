@@ -1,16 +1,16 @@
 "make sure vim-plug is installed {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
     "make sure curl is installed
-    let b:curl = system('which curl')
+    let s:curl = system('which curl')
 
-    if b:curl !=# ''
+    if s:curl !=# ''
         silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
                     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     else
         "try wget (need to create folder separately)
-        let b:wget = system('which wget')
+        let s:wget = system('which wget')
 
-        if b:wget !=# ''
+        if s:wget !=# ''
             if empty(glob('~/.vim/autoload/'))
                 silent !mkdir -p ~/.vim/autoload/
             endif
@@ -24,10 +24,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
             qall!
         endif
 
-        unlet b:wget
+        unlet s:wget
     endif
 
-    unlet b:curl
+    unlet s:curl
 endif "}}}
 "start configuring vim-plug {{{
 call plug#begin($HOME . '/.vim/plugged') "}}}
