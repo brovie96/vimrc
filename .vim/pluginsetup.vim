@@ -78,6 +78,8 @@ Plug 'justinmk/vim-dirvish' "}}}
 Plug 'tpope/vim-scriptease' "}}}
 "load vim-unimpaired {{{
 Plug 'tpope/vim-unimpaired' "}}}
+"load trailingwhitespace.vim (mine) {{{
+Plug 'brovie96/trailingwhitespace.vim' "}}}
 "}}}
 "update runtime path and init vim-plug {{{
 "(plugins are loaded after this function call)
@@ -93,6 +95,9 @@ nnoremap <silent> <leader>ut :UndotreeToggle<cr>
 "}}}
 "set up mapping for vim-checklist {{{
 nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
+"}}}
+"set up mapping for trailingwhitespace.vim {{{
+nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
 "}}}
 "override netrw commands with vim-dirvish {{{
 let g:loaded_netrwPlugin = 1

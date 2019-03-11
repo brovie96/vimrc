@@ -67,11 +67,7 @@ set hidden "}}}
 nnoremap <leader>l :ls<CR>:b<space>
 "}}}
 "}}}
-"loading other stuff {{{
-"load trailing whitespace stuff {{{
-runtime trailingwhitespace.vim "}}}
 "load plugins {{{
 runtime pluginsetup.vim "}}}
-"}}}
 "modeline to turn folds on {{{
 " vi: se fdm=marker: }}}
