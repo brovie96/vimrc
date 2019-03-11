@@ -1,5 +1,5 @@
 Finished. 0 error(s).
-[========================]
+[=========================]
 
 - vim-eunuch: OK
 - ale: OK
@@ -25,3 +25,4 @@ Finished. 0 error(s).
 - vim-speeddating: OK
 - vim-checklist: OK
 - vim-dirvish: OK
+- trailingwhitespace.vim: OK
