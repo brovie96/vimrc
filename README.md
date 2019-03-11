@@ -6,7 +6,9 @@ UI a bit prettier.
 ### Installing
 Most online sources (including [the Vim subreddit][Vim sub]) strongly
 discourage using someone else's Vim configuration, but if you really want to
-use mine, here's how to set it up.
+use mine, here's how to set it up. If you just want to use my trailing
+whitespace stuff, that has been spun off into [its own
+plugin][trailingwhitespace.vim].
 
 Make sure you are on a Unix-equivalent OS (including any version of Linux, even
 when run in [WSL][WSL]) and have a version of Vim that is compatible with
@@ -28,6 +30,7 @@ being loaded.
 [Vim]: http://www.vim.org/
 [Vim sub]: http://reddit.com/r/vim/
 [WSL]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+[trailingwhitespace.vim]: https://github.com/brovie96/trailingwhitespace.vim/
 [vim-plug]: https://github.com/junegunn/vim-plug/
 [plugins.txt]: https://github.com/brovie96/vimrc/blob/master/plugins.txt/
 [Vim Github]: https://github.com/vim/vim/
