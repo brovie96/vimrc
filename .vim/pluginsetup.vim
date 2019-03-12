@@ -105,7 +105,5 @@ command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args> "}}}
 "}}}
-"configure lightline {{{
-runtime lightlinesetup.vim "}}}
 "modeline to turn folds on {{{
 " vi: se fdm=marker: }}}

@@ -67,7 +67,11 @@ set hidden "}}}
 nnoremap <leader>l :ls<CR>:b<space>
 "}}}
 "}}}
+"load external stuff {{{
 "load plugins {{{
 runtime pluginsetup.vim "}}}
+"configure lightline {{{
+runtime lightlinesetup.vim "}}}
+"}}}
 "modeline to turn folds on {{{
 " vi: se fdm=marker: }}}
