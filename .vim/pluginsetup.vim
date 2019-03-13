@@ -99,6 +99,13 @@ nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
 "set up mapping for trailingwhitespace.vim {{{
 nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
 "}}}
+"set up mappings for VimCompletesMe {{{
+"disable default mappings {{{
+let g:vcm_default_maps = 0 "}}}
+"set up custom mapping {{{
+imap <S-Tab>   <plug>vim_completes_me_forward
+"}}}
+"}}}
 "override netrw commands with vim-dirvish {{{
 let g:loaded_netrwPlugin = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
