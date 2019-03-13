@@ -9,6 +9,7 @@ Finished. 0 error(s).
 - startuptime.vim: OK
 - webapi-vim: OK
 - nginx.vim: OK
+- vim-mucomplete: OK
 - vim-repeat: OK
 - vim-commentary: OK
 - vim-characterize: OK
@@ -16,7 +17,6 @@ Finished. 0 error(s).
 - vim-blade: OK
 - lightline.vim: OK
 - vim-surround: OK
-- VimCompletesMe: OK
 - vim-unimpaired: OK
 - vim-plug: OK
 - gist-vim: OK
