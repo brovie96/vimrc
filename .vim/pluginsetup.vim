@@ -104,14 +104,6 @@ nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<c
 imap <leader><tab> <plug>(MUcompleteFwd)
 imap <leader><s-tab> <plug>(MUcompleteBwd)
 "}}}
-"turn on automatic completion for vimscript files {{{
-augroup mucompletesetup
-    autocmd!
-    autocmd BufNewFile,BufRead,BufEnter .vimrc :MUcompleteAutoOn
-    autocmd BufLeave .vimrc :MUcompleteAutoOff
-    autocmd BufNewFile,BufRead,BufEnter *.vim :MUcompleteAutoOn
-    autocmd BufLeave *.vim :MUcompleteAutoOff
-augroup END "}}}
 "}}}
 "override netrw commands with vim-dirvish {{{
 let g:loaded_netrwPlugin = 1
