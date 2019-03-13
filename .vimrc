@@ -30,6 +30,9 @@ highlight LineNr term=bold cterm=bold ctermfg=darkcyan
 set showcmd "}}}
 "keep long lines from wrapping {{{
 set nowrap "}}}
+"change completeopt (for vim-mucomplete) {{{
+set completeopt+=menuone
+set completeopt+=noselect "}}}
 "}}}
 "behavior stuff (contains movement stuff) {{{
 "turn on advanced command-line completion (wildmenu) {{{

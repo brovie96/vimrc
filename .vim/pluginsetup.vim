@@ -54,8 +54,6 @@ Plug 'jwalton512/vim-blade' "}}}
 Plug 'chr4/nginx.vim' "}}}
 "load vim-eunuch {{{
 Plug 'tpope/vim-eunuch' "}}}
-"load VimCompletesMe {{{
-Plug 'ajh17/VimCompletesMe' "}}}
 "load ale {{{
 Plug 'w0rp/ale' "}}}
 "load lightline.vim {{{
@@ -80,6 +78,8 @@ Plug 'tpope/vim-scriptease' "}}}
 Plug 'tpope/vim-unimpaired' "}}}
 "load trailingwhitespace.vim (mine) {{{
 Plug 'brovie96/trailingwhitespace.vim' "}}}
+"load vim-mucomplete {{{
+Plug 'lifepillar/vim-mucomplete' "}}}
 "}}}
 "update runtime path and init vim-plug {{{
 "(plugins are loaded after this function call)
@@ -99,12 +99,9 @@ nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
 "set up mapping for trailingwhitespace.vim {{{
 nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
 "}}}
-"set up mappings for VimCompletesMe {{{
-"disable default mappings {{{
-let g:vcm_default_maps = 0 "}}}
-"set up custom mapping {{{
-imap <S-Tab>   <plug>vim_completes_me_forward
-"}}}
+"set up custom mappings for vim-mucomplete {{{
+imap <leader><tab> <plug>(MUcompleteFwd)
+imap <leader><s-tab> <plug>(MUcompleteBwd)
 "}}}
 "override netrw commands with vim-dirvish {{{
 let g:loaded_netrwPlugin = 1
