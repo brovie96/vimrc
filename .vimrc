@@ -34,7 +34,7 @@ set nowrap "}}}
 set completeopt+=menuone
 set completeopt+=noselect "}}}
 "hide completion messages (for vim-mucomplete) {{{
-set shortmess+=c " }}}
+set shortmess+=c "}}}
 "}}}
 "behavior stuff (contains movement stuff) {{{
 "turn on advanced command-line completion (wildmenu) {{{
