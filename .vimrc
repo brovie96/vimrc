@@ -31,8 +31,7 @@ set showcmd "}}}
 "keep long lines from wrapping {{{
 set nowrap "}}}
 "change completeopt (for vim-mucomplete) {{{
-set completeopt+=menuone
-set completeopt+=noselect "}}}
+set completeopt+=menuone,noselect "}}}
 "hide completion messages (for vim-mucomplete) {{{
 set shortmess+=c "}}}
 "}}}

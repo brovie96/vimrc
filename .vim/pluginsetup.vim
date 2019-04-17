@@ -104,10 +104,8 @@ imap <leader><tab> <plug>(MUcompleteFwd)
 imap <leader><s-tab> <plug>(MUcompleteBwd)
 "}}}
 "override netrw commands with vim-dirvish {{{
-let g:loaded_netrw = 1
-let g:loaded_netrwPlugin = 1
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
+let g:loaded_netrw = 1 | let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1 | let g:loaded_netrwFileHandlers = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args> "}}}

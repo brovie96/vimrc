@@ -6,7 +6,7 @@ function! s:HumanSize(bytes) abort
     let l:bytes = a:bytes | let l:sizes = ['KB', 'MB', 'GB'] | let l:i = -1
 
     while l:bytes >= 1000
-        let l:bytes = l:bytes / 1000.0
+        let l:bytes /= 1000.0
         let l:i += 1
     endwhile
 
@@ -27,7 +27,7 @@ function! statusline#LineinfoExtended() abort
 
         "append screen column if different
         if col('.') != virtcol('.')
-            let l:col = l:col . printf('-%d', virtcol('.'))
+            let l:col .= printf('-%d', virtcol('.'))
         endif
 
     endif
@@ -64,9 +64,9 @@ function! statusline#Filepath() abort
           \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ expand('%:p') !=# '' ?
-          \ winwidth(0) <= 70 ? expand('%:t') :
-          \ fnamemodify(expand('%:p'), ':~') ==# '~/' ? '~' : fnamemodify(expand('%:p'), ':~') :
-          \ '[No Name]'
+          \     winwidth(0) <= 70 ? expand('%:t') :
+          \     fnamemodify(expand('%:p'), ':~') ==# '~/' ? '~' : fnamemodify(expand('%:p'), ':~')
+          \ : '[No Name]'
 endfunction "}}}
 "display modified when not using a plugin {{{
 function! statusline#Modified() abort
