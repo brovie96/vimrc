@@ -77,7 +77,7 @@ function! statusline#Modified() abort
           \ &filetype ==# 'vimshell' ? '' :
           \ &filetype ==# 'dirvish' ? '' :
           \ &filetype ==# 'undotree' ? '' :
-          \ &filetype ==# 'help' ? '' :
+          \ &filetype ==# 'help' && !&modifiable ? '' :
           \ expand('%') =~# '^diffpanel_.*' ? '' :
           \ expand('%') ==# '[Plugins]' ? '' :
           \ &modified ? ',+' :
