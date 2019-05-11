@@ -59,8 +59,6 @@ set whichwrap+=<,>,h,l,[,] "}}}
 nnoremap <silent> <leader><Tab> :tabnext<cr>
 nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
 "}}}
-"}}}
-"other stuff {{{
 "set default sql type to mysql {{{
 let g:sql_type_default='mysql' "}}}
 "}}}
