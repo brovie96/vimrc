@@ -96,7 +96,7 @@ nnoremap <silent> <leader>ut :UndotreeToggle<cr>
 "set up mapping for vim-checklist {{{
 nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
 "}}}
-"set up mapping for trailingwhitespace.vim {{{
+"set up mapping for trailingwhitespace.vim (mine) {{{
 nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
 "}}}
 "set up custom mappings for vim-mucomplete {{{
