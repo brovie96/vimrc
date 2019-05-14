@@ -1,0 +1,8 @@
+#ignore plug.vim downloaded through cURL or Wget and plug.vim.old created by
+#vim-plug itself when upgrading vim-plug
+.vim/autoload/plug.vim
+.vim/autoload/plug.vim.old
+
+#ignore any file in the plugged folder except the readme
+.vim/plugged/*
+!.vim/plugged/README.md

@@ -1,4 +1,0 @@
-#ignore plug.vim downloaded through cURL or Wget and plug.vim.old created by
-#vim-plug itself when upgrading vim-plug
-plug.vim
-plug.vim.old
