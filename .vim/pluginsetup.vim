@@ -6,54 +6,12 @@ endif "}}}
 "start configuring vim-plug {{{
 call plug#begin($HOME . '/.vim/plugged') "}}}
 "load plugins {{{
-"load vim-surround {{{
-Plug 'tpope/vim-surround' "}}}
-"load undotree {{{
-Plug 'mbbill/undotree' "}}}
-"load startuptime.vim {{{
-Plug 'tweekmonster/startuptime.vim' "}}}
-"load gist-vim and webapi-vim (gist-vim depends on webapi-vim) {{{
-Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' "}}}
-"load vim-plug (for help file) {{{
-Plug 'junegunn/vim-plug' "}}}
-"load vim-easy-align {{{
-Plug 'junegunn/vim-easy-align' "}}}
-"load vim-speeddating {{{
-Plug 'tpope/vim-speeddating' "}}}
-"load vim-repeat {{{
-Plug 'tpope/vim-repeat' "}}}
-"load vim-blade {{{
-Plug 'jwalton512/vim-blade' "}}}
-"load nginx.vim {{{
-Plug 'chr4/nginx.vim' "}}}
-"load vim-eunuch {{{
-Plug 'tpope/vim-eunuch' "}}}
-"load ale {{{
-Plug 'w0rp/ale' "}}}
-"load lightline.vim {{{
-Plug 'itchyny/lightline.vim' "}}}
-"load lightline-ale (depends on ale and lightline.vim) {{{
-Plug 'maximbaz/lightline-ale' "}}}
-"load hexmode {{{
-Plug 'fidian/hexmode' "}}}
-"load vim-checklist {{{
-Plug 'esalter-va/vim-checklist' "}}}
-"load vim-commentary {{{
-Plug 'tpope/vim-commentary' "}}}
-"load vim-characterize {{{
-Plug 'tpope/vim-characterize' "}}}
-"load gitignore.vim {{{
-Plug 'rdolgushin/gitignore.vim' "}}}
-"load vim-dirvish {{{
-Plug 'justinmk/vim-dirvish' "}}}
-"load vim-scriptease {{{
-Plug 'tpope/vim-scriptease' "}}}
-"load vim-unimpaired {{{
-Plug 'tpope/vim-unimpaired' "}}}
-"load trailingwhitespace.vim (mine) {{{
-Plug 'brovie96/trailingwhitespace.vim' "}}}
-"load vim-mucomplete {{{
-Plug 'lifepillar/vim-mucomplete' "}}}
+    let s:plugins = readfile(expand('$HOME/.vim') . '/pluginlist.txt')
+    for s:plugin in s:plugins
+        if s:plugin !~? '^// '
+            execute 'Plug' "'" . s:plugin . "'"
+        endif
+    endfor
 "}}}
 "update runtime path and init vim-plug {{{
 "(plugins are loaded after this function call)

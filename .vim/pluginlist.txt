@@ -1,0 +1,49 @@
+// load vim-surround
+tpope/vim-surround
+// load undotree
+mbbill/undotree
+// load startuptime.vim
+tweekmonster/startuptime.vim
+// load gist-vim and webapi-vim (gist-vim depends on webapi-vim)
+mattn/webapi-vim
+mattn/gist-vim
+// load vim-plug (for help file)
+junegunn/vim-plug
+// load vim-easy-align
+junegunn/vim-easy-align
+// load vim-speeddating
+tpope/vim-speeddating
+// load vim-repeat
+tpope/vim-repeat
+// load vim-blade
+jwalton512/vim-blade
+// load nginx.vim
+chr4/nginx.vim
+// load vim-eunuch
+tpope/vim-eunuch
+// load ale
+w0rp/ale
+// load lightline.vim
+itchyny/lightline.vim
+// load lightline-ale (depends on ale and lightline.vim)
+maximbaz/lightline-ale
+// load hexmode
+fidian/hexmode
+// load vim-checklist
+esalter-va/vim-checklist
+// load vim-commentary
+tpope/vim-commentary
+// load vim-characterize
+tpope/vim-characterize
+// load gitignore.vim
+rdolgushin/gitignore.vim
+// load vim-dirvish
+justinmk/vim-dirvish
+// load vim-scriptease
+tpope/vim-scriptease
+// load vim-unimpaired
+tpope/vim-unimpaired
+// load trailingwhitespace.vim (mine)
+brovie96/trailingwhitespace.vim
+// load vim-mucomplete
+lifepillar/vim-mucomplete
