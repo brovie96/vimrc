@@ -32,6 +32,6 @@ being loaded.
 [WSL]: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 [trailingwhitespace.vim]: https://github.com/brovie96/trailingwhitespace.vim/
 [vim-plug]: https://github.com/junegunn/vim-plug/
-[plugins.txt]: https://github.com/brovie96/vimrc/blob/master/plugins.txt/
+[pluginlist.txt]: https://github.com/brovie96/vimrc/blob/master/.vim/pluginlist.txt/
 [Vim Github]: https://github.com/vim/vim/
 [Vint]: https://github.com/Kuniwak/vint/
