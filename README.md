@@ -13,7 +13,7 @@ plugin][trailingwhitespace.vim].)
 Make sure you are on a Unix-equivalent OS (including any version of Linux, even
 when run in [WSL][WSL]) and have a version of Vim that is compatible with
 [vim-plug][vim-plug] (7.0 or newer, 8.0+ recommended), since it is used in
-order to load [various plugins][plugins.txt]. (Personally, I use the newest
+order to load [various plugins][pluginlist.txt]. (Personally, I use the newest
 version of Vim from [the official GitHub repository][Vim GitHub].) After
 cloning the repository, make symlinks to the `.vim` folder, `.vimrc`, and
 optionally `.gvimrc` so that Vim will load them. (You can even make a symlink
