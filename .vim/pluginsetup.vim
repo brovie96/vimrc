@@ -1,17 +1,17 @@
 "make sure vim-plug is installed {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
-    "call the autoload function {{{
-    call pluginsetup#downloadplug() "}}}
+    call pluginsetup#downloadplug()
 endif "}}}
 "start configuring vim-plug {{{
 call plug#begin($HOME . '/.vim/plugged') "}}}
 "load plugins {{{
-let s:plugins = readfile(expand('$HOME/.vim') . '/pluginlist.txt')
+let s:plugins = readfile(expand('$HOME/.vim/pluginlist.txt'))
 for s:plugin in s:plugins
     if s:plugin !~? '^// '
         execute 'Plug' "'" . s:plugin . "'"
     endif
-endfor "}}}
+endfor
+unlet s:plugins "}}}
 "update runtime path and init vim-plug {{{
 "(plugins are loaded after this function call)
 call plug#end() "}}}
