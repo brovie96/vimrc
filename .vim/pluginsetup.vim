@@ -11,6 +11,7 @@ for s:plugin in s:plugins
         execute 'Plug' "'" . s:plugin . "'"
     endif
 endfor
+unlet s:plugin
 unlet s:plugins "}}}
 "update runtime path and init vim-plug {{{
 "(plugins are loaded after this function call)
