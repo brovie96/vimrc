@@ -30,3 +30,5 @@ tpope/vim-unimpaired
 // (trailingwhitespace.vim is mine)
 brovie96/trailingwhitespace.vim
 lifepillar/vim-mucomplete
+// modeline to highlight comments
+// vi:ft=javascript
