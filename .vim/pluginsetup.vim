@@ -5,7 +5,7 @@ endif "}}}
 "start configuring vim-plug {{{
 call plug#begin($HOME . '/.vim/plugged') "}}}
 "load plugins {{{
-let s:plugins = readfile(expand('$HOME/.vim/pluginlist.txt'))
+let s:plugins = readfile($HOME . '/.vim/pluginlist.txt')
 for s:plugin in s:plugins
     if s:plugin !~? '^//'
         execute 'Plug' "'" . s:plugin . "'"
