@@ -18,6 +18,8 @@ set nojoinspaces "}}}}}}
 set background=light "}}}
 "make sure terminal is in 256-color mode {{{
 set t_Co=256 "}}}
+"keep vim from starting up in replace mode {{{
+set t_u7= "}}}
 "turn on line numbers {{{
 set number "}}}
 "change highlighting for line numbers {{{
