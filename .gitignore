@@ -3,6 +3,7 @@
 .vim/autoload/plug.vim
 .vim/autoload/plug.vim.old
 
-#ignore any file in the plugged folder except the readme
+#ignore any file in the plugged folder except the readme and the gc script
 .vim/plugged/*
 !.vim/plugged/README.md
+!.vim/plugged/gc.sh
