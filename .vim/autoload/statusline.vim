@@ -153,5 +153,5 @@ function! statusline#InactiveFirst() abort
           \ &filetype ==# 'help' ? 'Help' :
           \ expand('%:t')
 endfunction "}}}
-"modeline to turn folds on {{{
-" vi: se fdm=marker: }}}
+"modeline to turn folds on
+" vi:fdm=marker
