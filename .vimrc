@@ -1,6 +1,3 @@
-"set nocompatible explicitly {{{
-"(to make sure tweekmonster/startuptime.vim doesn't have weird issues)
-set nocompatible "}}}
 "statusline stuff {{{
 "show statusline
 set laststatus=2
@@ -28,11 +25,7 @@ highlight LineNr term=bold cterm=bold ctermfg=darkcyan
 "(useful for checking normal mode commands as they are typed)
 set showcmd
 "keep long lines from wrapping
-set nowrap
-"change completeopt (for vim-mucomplete)
-set completeopt+=menuone,noselect
-"hide completion messages (for vim-mucomplete)
-set shortmess+=c "}}}
+set nowrap "}}}
 "behavior stuff (contains movement stuff) {{{
 "turn on advanced command-line completion (wildmenu)
 set wildmenu

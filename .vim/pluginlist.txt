@@ -2,33 +2,18 @@
 // each one is passed to Plug (eg Plug 'tpope/vim-surround')
 // consists of fully qualified GitHub path
 tpope/vim-surround
-mbbill/undotree
-tweekmonster/startuptime.vim
-// (gist-vim depends on webapi-vim)
-mattn/webapi-vim
-mattn/gist-vim
 // (vim-plug is loaded for access to the help file)
 junegunn/vim-plug
-junegunn/vim-easy-align
-tpope/vim-speeddating
 tpope/vim-repeat
 jwalton512/vim-blade
 chr4/nginx.vim
-tpope/vim-eunuch
 w0rp/ale
 itchyny/lightline.vim
 // (lightline-ale depends on ale and lightline.vim)
 maximbaz/lightline-ale
-fidian/hexmode
-esalter-va/vim-checklist
-tpope/vim-commentary
 tpope/vim-characterize
-rdolgushin/gitignore.vim
 justinmk/vim-dirvish
-tpope/vim-scriptease
-tpope/vim-unimpaired
 // (trailingwhitespace.vim is mine)
 brovie96/trailingwhitespace.vim
-lifepillar/vim-mucomplete
 // modeline to highlight comments
 // vi:ft=pluginlist

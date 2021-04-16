@@ -17,19 +17,8 @@ unlet s:plugins "}}}
 "(plugins are loaded after this function call)
 call plug#end()
 "set up mappings/commands {{{
-"set up vim-easy-align commands
-vmap <Enter> <Plug>(EasyAlign)
-xmap gl <Plug>(EasyAlign)
-nmap gl <Plug>(EasyAlign)
-"set up mapping for undotree
-nnoremap <silent> <leader>ut :UndotreeToggle<cr>
-"set up mapping for vim-checklist
-nnoremap <silent> <leader><cr> :ChecklistToggleCheckbox<cr>
 "set up mapping for trailingwhitespace.vim (mine)
 nnoremap <silent> <leader>w :call trailingwhitespace#ClearTrailingWhitespace()<cr>
-"set up custom mappings for vim-mucomplete
-imap <leader><tab> <plug>(MUcompleteFwd)
-imap <leader><s-tab> <plug>(MUcompleteBwd)
 "override netrw commands with vim-dirvish
 let g:loaded_netrw = 1 | let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1 | let g:loaded_netrwFileHandlers = 1
