@@ -17,8 +17,8 @@ order to load [various plugins][pluginlist.txt]. (Personally, I use the newest
 version of Vim from [the official GitHub repository][Vim GitHub].) After
 cloning the repository, make symlinks to the `.vim` folder, `.vimrc`, and
 optionally `.gvimrc` so that Vim will load them. (You can even make a symlink
-to my .vintrc.yaml if you have [Vint][Vint] installed and you really want to be
-a copycat.) Next, start Vim (which will download vim-plug to the
+to my `.vintrc.yaml` if you have [Vint][Vint] installed and you really want to
+be a copycat.) Next, start Vim (which will download vim-plug to the
 `.vim/autoload` folder, assuming you have cURL or Wget installed [if you don't,
 it will just exit and tell you to install one of those programs]) and run
 `:PlugInstall` so that vim-plug will download the plugins to the `.vim/plugged`
