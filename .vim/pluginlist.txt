@@ -7,7 +7,7 @@ junegunn/vim-plug
 tpope/vim-repeat
 jwalton512/vim-blade
 chr4/nginx.vim
-w0rp/ale
+dense-analysis/ale
 itchyny/lightline.vim
 // (lightline-ale depends on ale and lightline.vim)
 maximbaz/lightline-ale

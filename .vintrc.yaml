@@ -1,3 +1,9 @@
 policies:
-    ProhibitSetNoCompatible:
-        enabled: false
+  ProhibitAbbreviationOption:
+    enabled: yes
+
+  ProhibitNoAbortFunction:
+    enabled: yes
+
+  ProhibitImplicitScopeVariable:
+    enabled: yes

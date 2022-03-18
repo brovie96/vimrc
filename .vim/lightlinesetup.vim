@@ -4,7 +4,7 @@ let g:lightline = {
     \ 'active': {
     \   'left':  [ [ 'mode', 'paste' ],
     \              [ 'readonly', 'filepath', 'modified', 'humansize' ] ],
-    \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+    \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
     \              [ 'lineinfoextended' ],
     \              [ 'rulerpercent' ],
     \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
@@ -31,12 +31,14 @@ let g:lightline = {
     \ },
     \ 'component_expand': {
     \   'linter_checking': 'lightline#ale#checking',
+    \   'linter_infos': 'lightline#ale#infos',
     \   'linter_warnings': 'lightline#ale#warnings',
     \   'linter_errors': 'lightline#ale#errors',
     \   'linter_ok': 'lightline#ale#ok'
     \ },
     \ 'component_type': {
     \   'linter_checking': 'left',
+    \   'linter_infos': 'left',
     \   'linter_warnings': 'warning',
     \   'linter_errors': 'error',
     \   'linter_ok': 'left'
