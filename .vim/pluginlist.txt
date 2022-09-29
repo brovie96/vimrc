@@ -15,7 +15,7 @@ tpope/vim-characterize
 justinmk/vim-dirvish
 // (trailingwhitespace.vim is mine)
 brovie96/trailingwhitespace.vim
-kristijanhusak/vim-dirvish-git
 tpope/vim-commentary
+airblade/vim-gitgutter
 // modeline to highlight comments
 // vi:ft=pluginlist

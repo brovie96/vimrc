@@ -24,6 +24,12 @@ let g:loaded_netrw = 1 | let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1 | let g:loaded_netrwFileHandlers = 1
 command! -nargs=? -complete=dir Explore Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
-command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args> "}}}
+command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
+"set colors for vim-gitgutter
+highlight! link SignColumn LineNr
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+"}}}
 "modeline to turn folds on
 " vi:fdm=marker
