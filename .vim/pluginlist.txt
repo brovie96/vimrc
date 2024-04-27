@@ -5,7 +5,6 @@ tpope/vim-surround
 // (vim-plug is loaded for access to the help file)
 junegunn/vim-plug
 tpope/vim-repeat
-jwalton512/vim-blade
 chr4/nginx.vim
 dense-analysis/ale
 itchyny/lightline.vim

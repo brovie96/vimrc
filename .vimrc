@@ -45,9 +45,6 @@ set scrolloff=5
 set sidescroll=20
 "set left and right movement to move across eols
 set whichwrap+=<,>,h,l,[,] "}}}
-"map <leader><Tab> and <leader><S-Tab> to switch tabs
-nnoremap <silent> <leader><Tab> :tabnext<cr>
-nnoremap <silent> <leader><S-Tab> :tabprevious<cr>
 "set default sql type to mysql
 let g:sql_type_default='mysql' "}}}
 "hidden buffer stuff {{{
